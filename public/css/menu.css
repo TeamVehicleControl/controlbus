@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label, 
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label, 
+.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label{
+	color: #003B63;
+}
+
+.mdl-textfield__label:after{
+	background-color: #003B63;
+}
