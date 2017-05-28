@@ -10,6 +10,7 @@ function init() {
 	}
 }
 
+//
 $(".toogle-password").click(function() {
 	$(this).find('i').toggleClass("mdi-remove_red_eye mdi-visibility_off");
     var input = $(this).parent().find('.mdl-textfield__input');
