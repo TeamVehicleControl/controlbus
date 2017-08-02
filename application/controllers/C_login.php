@@ -13,6 +13,19 @@ class C_login extends CI_Controller {
 		$this->load->view('v_login');
 	}
 	
+	function redirectMenu() {
+	    $usuario  = _post('usuario');
+	    $password = _post('password');
+	    _log($password);
+	    /*if($usuario == null || $password == null){
+	        redirect('C_login','refresh');
+	        //throw new Exception('no');
+	    }
+	    $this->session->set_userdata(array('usuario' => $usuario));
+	    //$this->session->set_userdata(array('year_prog' => $anio));
+	    redirect('C_menu','refresh');*/
+	}
+	
 // 	function loginUser() {
 // 	    _log("entra ");
 // 	    $data['error'] = EXIT_ERROR;

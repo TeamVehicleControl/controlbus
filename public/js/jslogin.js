@@ -20,3 +20,29 @@ $(".toogle-password").click(function() {
       input.attr("type", "password");
   }
 });
+
+function logear(btn) {
+	var usuario  = $("#usuario").val();
+	var password = $("#password").val();
+	if(usuario == null || password == null) {
+		msj('error','Su usuario o clave es incorrecto');
+		return;
+	}
+	if(usuario != null && password != null) {
+		$.ajax({
+			data  : { usuario  : usuario,
+					  password : password},
+			url   : 'C_login/redirectMenu',
+			type  : 'POST'
+		}).done(function(data){
+			try{
+				data = JSON.parse(data);
+				if(data.error == 0){
+				}
+				msj('error',data.msj);
+			} catch (err){
+				msj('error',err.message);
+			}
+		});
+	}
+}
