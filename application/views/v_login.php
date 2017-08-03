@@ -33,7 +33,7 @@
                 <div class="col-sm-12">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" id="usuario">
-                        <label class="mdl-textfield__label" for="sample3">Usuario</label>
+                        <label class="mdl-textfield__label" for="sample3">Usuario(s)</label>
                     </div>
                 </div>
                 <div class="col-sm-12">
