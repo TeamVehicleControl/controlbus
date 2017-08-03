@@ -29,20 +29,23 @@ function logear(btn) {
 		return;
 	}
 	if(usuario != null && password != null) {
-		$.ajax({
-			data  : { usuario  : usuario,
-					  password : password},
-			url   : 'C_login/redirectMenu',
-			type  : 'POST'
-		}).done(function(data){
-			try{
-				data = JSON.parse(data);
-				if(data.error == 0){
+		Pace.restart();
+		Pace.track(function() {
+			$.ajax({
+				data  : { usuario  : usuario,
+						  password : password},
+				url   : 'C_login/redirectMenu',
+				type  : 'POST'
+			}).done(function(data){
+				try{
+					data = JSON.parse(data);
+					if(data.error == 0){
+					}
+					msj('error',data.msj);
+				} catch (err){
+					msj('error',err.message);
 				}
-				msj('error',data.msj);
-			} catch (err){
-				msj('error',err.message);
-			}
+			});
 		});
 	}
 }
