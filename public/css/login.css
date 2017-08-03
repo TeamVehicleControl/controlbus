@@ -1,44 +1,19 @@
 @CHARSET "ISO-8859-1";
-body{
-	position: relative;
-	background-image: url("../img/header/home-fondo.jpg");
-	background-size: cover !important;
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    z-index: 0;
-}
-body:before{
-    position: absolute;
-    background: #000;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    opacity: 0.4;
-    content: '';
-}
-
 #main{
-	background-color: rgba(0, 0, 0, 0.45);
-	max-width: 390px;
-	padding: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-	left: calc(50% - 200px);
+background-color: rgba(0, 0, 0, 0.45);
+max-width: 390px;
+padding: 30px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
 #main button{
-	background-color: #003B63;
-	color: #FFFFFF;
-	width: 100%;
-	margin: 20px 0;
+background-color: #003B63;
+color: #FFFFFF;
+width: 100%;
+margin: 20px 0;
 }
 
 .mdl-textfield__label{

@@ -14,7 +14,6 @@
         <meta name="theme-color"            content="#FFFFFF">
         <meta name="description"            content="Simple, r&aacute;pido , econ&oacute;mico model tiene todo">
         
-        <link type="image/x-icon"   rel="shortcut icon" href="<?php echo RUTA_IMG?>header/modell.ico">
         <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-3.3.6/css/bootstrap.min.css?v=<?php echo time();?>">
 		<link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>mdl/css/material.min.css?v=<?php echo time();?>">
 		<link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.min.css?v=<?php echo time();?>">
@@ -32,14 +31,15 @@
                 <div class="col-sm-12 text-center">
                     <h1>CONTROL BUS</h1>
                 </div>
-                <div class="col-sm-12">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <div class="col-sm-12" id="loginForm">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cont_usuario">
                         <input class="mdl-textfield__input" type="text" id="usuario">
-                        <label class="mdl-textfield__label" for="sample3">Usuario</label>
+                        <label class="mdl-textfield__label" for="Username" autofocus="autofocus">Usuario</label>
+                        <span class="mdl-textfield__error">Tu usuario y/o contrase&ntilde;a son incorrectas.</span>
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <div id="clave-show" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <div id="clave-show" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" " id="cont_clave">
                         <input class="mdl-textfield__input" type="password" id="password">
                         <label class="mdl-textfield__label" for="password">Contrase&ntilde;a</label>
                         <a id="showpas"  class="mdl-button mdl-js-button mdl-js-button-ripple-effect see-pass toogle-password"><i  class="mdi mdi-visibility_off text-rigth "></i></a>
@@ -52,7 +52,7 @@
                     </label>
                 </div>
                 <div class="col-sm-12">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="logear()">INGRESAR</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="logear()" id="btnLoginAdminPass">INGRESAR</button>
                 </div>
             </div>
         </section>

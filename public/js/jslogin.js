@@ -8,9 +8,19 @@ function init() {
 	}else{
 		$('select').selectpicker();
 	}
+	$("#loginForm input, select, textarea").keypress(function(event) {
+		if (event.which == 13) {
+			event.preventDefault();
+			logear();
+		}
+	});
+	$("[data-hide]").on("click", function(){
+        $(this).closest("." + $(this).attr("data-hide")).hide();
+    });
+	resizeContent();
 }
 
-//
+var errorLogin = 0;
 $(".toogle-password").click(function() {
 	$(this).find('i').toggleClass("mdi-remove_red_eye mdi-visibility_off");
     var input = $(this).parent().find('.mdl-textfield__input');
@@ -21,31 +31,34 @@ $(".toogle-password").click(function() {
   }
 });
 
-function logear(btn) {
-	var usuario  = $("#usuario").val();
-	var password = $("#password").val();
-	if(usuario == null || password == null) {
+function logear() {
+	$('#btnLoginAdminPass').addClass('btn-load');
+	var user  = $("#usuario").val();
+	var pass = $("#password").val();
+	check = '0';
+	if ($('#check').is(":checked")) {
+		check = '1';
+	}
+	if(user == null || pass == null) {
 		msj('error','Su usuario o clave es incorrecto');
 		return;
 	}
 	if(usuario != null && password != null) {
-		Pace.restart();
-		Pace.track(function() {
-			$.ajax({
-				data  : { usuario  : usuario,
-						  password : password},
-				url   : 'C_login/redirectMenu',
-				type  : 'POST'
-			}).done(function(data){
-				try{
-					data = JSON.parse(data);
-					if(data.error == 0){
-					}
-					msj('error',data.msj);
-				} catch (err){
-					msj('error',err.message);
+		$.ajax({
+			data  : { user  : user,
+					  pass  : pass,
+					  check : check},
+			url   : 'C_login/logear',
+			type  : 'POST'
+		}).done(function(data){
+			try{
+				data = JSON.parse(data);
+				if(data.error == 0){
 				}
-			});
+				msj('error',data.msj);
+			} catch (err){
+				msj('error',err.message);
+			}
 		});
 	}
 }
