@@ -51,13 +51,13 @@
     		<div class="mdl-layout__drawer">
     			<span class="mdl-layout-title"><i class="mdi mdi-menu"></i></span>
     			<nav class="mdl-navigation p-t-0">
-    				<a class="mdl-navigation__link" href="upload.html"><div class="arrow-right"></div><i class="mdi mdi-cloud_upload"></i><p>Alertas</p></a>
+    				<a class="mdl-navigation__link" href="upload.html"><div class="arrow-right"></div><i class="mdi mdi-priority_high"></i><p>Alertas</p></a>
     				<a class="mdl-navigation__link active" href=""><div class="arrow-right"></div><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>
     				<a class="mdl-navigation__link" href="users.html"><i class="mdi mdi-group_add"></i><p>Proveedores</p></a>
     				<a class="mdl-navigation__link" href=""><i class="mdi mdi-person"></i><p>Clientes</p></a>
-    				<a class="mdl-navigation__link" href=""><i class="fa fa-power-off"></i><p>Concesionaria</p></a>
-    				<a class="mdl-navigation__link" href=""><i class="fa fa-power-off"></i><p>Lubricantes</p></a>
-    				<a class="mdl-navigation__link" href=""><i class="fa fa-power-off"></i><p>Seguro</p></a>
+    				<a class="mdl-navigation__link" href=""><i class="mdi mdi-event_seat"></i><p>Concesionaria</p></a>
+    				<a class="mdl-navigation__link" href=""><i class="mdi mdi-opacity"></i><p>Lubricantes</p></a>
+    				<a class="mdl-navigation__link" href=""><i class="mdi mdi-local_hospital"></i><p>Seguro</p></a>
     			</nav>
     		</div>
     		<main class="mdl-layout__content">
