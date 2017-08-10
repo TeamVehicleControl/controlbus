@@ -61,8 +61,8 @@
     			</nav>
     		</div>
     		<main class="mdl-layout__content">
-    		<div class="col-md-10 col-md-offset-1 p-0">
-                <div class="col-sm-10 col-sm-5 col-sm-offset-1" id="graf1">	
+    		<div class="col-md-6">
+                <div class="col-sm-12" id="graf1">	
 				    <div class="mdl-card m-b-5">
 				        <div class="mdl-card__title">
                             <h2 class="mdl-card__title-text" id="idCantidadEvaluar">Fallas seg&uacute;n el tiempo</h2>
@@ -74,8 +74,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-10 col-md-offset-1 p-0">
-                <div class="col-sm-10 col-sm-5 col-sm-offset-1" id="graf2">	
+			<div class="col-md-6">
+                <div class="col-sm-12" id="graf2">	
 				    <div class="mdl-card m-b-5">
 				        <div class="mdl-card__title">
                             <h2 class="mdl-card__title-text" id="idCantidadEvaluar1">Alertas</h2>
@@ -87,8 +87,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-10 col-md-offset-1 p-0">
-                <div class="col-sm-10 col-sm-5 col-sm-offset-1" id="graf2">	
+			<div class="col-md-6">
+                <div class="col-sm-12" id="graf2">	
 				    <div class="mdl-card m-b-5">
 				        <div class="mdl-card__title">
                             <h2 class="mdl-card__title-text" id="idCantidadEvaluar2">Fallas por zona</h2>
@@ -100,8 +100,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-10 col-md-offset-1 p-0">
-                <div class="col-sm-10 col-sm-5 col-sm-offset-1" id="graf5">	
+			<div class="col-md-6">
+                <div class="col-sm-12" id="graf5">	
 				    <div class="mdl-card m-b-5">
 				        <div class="mdl-card__title">
                             <h2 class="mdl-card__title-text" id="idCantidadEvaluar5">Calidad por a&ntilde;o</h2>
