@@ -35,36 +35,47 @@ function logear() {
 	$('#btnLoginAdminPass').addClass('btn-load');
 	var user  = $("#usuario").val();
 	var pass = $("#password").val();
-	check = '0';
-	if ($('#check').is(":checked")) {
+	var check = '0';
+	if ($('#check').is(":checked") == true) {
 		check = '1';
 	}
 	if(user.length == 0) {
 		$("#incUser").text("Tu usuario y/o contrase&ntilde;a son incorrectas");
-		console.log('entra');
 		return;
 	}
 	if(pass.length == 0) {
 		$("#incPass").text("Tu usuario y/o contrase&ntilde;a son incorrectas");
-		console.log('entra2');
 		return;
 	}
 	if(usuario.length != 0 && password != 0) {
 		$.ajax({
 			data  : { user  : user,
-					  pass  : pass,
-					  check : check},
+					  pass  : JSON.stringify(pass),
+					  check : JSON.stringify(check)},
 			url   : 'C_login/logear',
 			type  : 'POST'
 		}).done(function(data){
 			try{
 				data = JSON.parse(data);
 				if(data.error == 0){
+					location.href = data.url;
+					if(data.remember == 0) {
+						setearInput('usuario', null);
+						setearInput('password', null);
+						$('#check').removeClass('is-checked');
+					}
+				}else {
+					return;
 				}
-				//msj('error',data.msj);
 			} catch (err){
 				msj('error',err.message);
 			}
 		});
+	}
+}
+
+function login() {
+	if(event.keyCode == 13){
+		logear();
 	}
 }

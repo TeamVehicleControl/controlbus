@@ -29,27 +29,13 @@ class M_usuario extends CI_Model{
 		}
 		
 		function getIngreso($s_usr, $s_pwd) {
-		    $sql = "SELECT CASE WHEN (SELECT COUNT(*)
-					                FROM persona p LEFT JOIN rrhh.personal_detalle pd ON pd.id_persona = p.nid_persona
-					               WHERE ( LOWER(p.usuario) = LOWER(?)     OR
-						                   LOWER(p.correo_inst) = LOWER(?) OR
-                                           LOWER(p.correo_admi) = LOWER(?) )
-					                 AND (p.clave  = (SELECT encrypt(?, ?, 'aes')) OR
-                                          ?       = (SELECT encrypt(?, ?, 'aes')) )
-					                 AND p.flg_acti         = '1' LIMIT 1) > 0 THEN '1'
-		                    ELSE '0' END AS personal,
-			           CASE WHEN (SELECT COUNT(*)
-					                FROM familiar f
-					               WHERE LOWER(f.usuario) = LOWER(?)
-                                     AND (f.clave = (SELECT encrypt(?, ?, 'aes')) OR
-                                          ?       = (SELECT encrypt(?, ?, 'aes')) ) ) > 0 THEN 1
-			                ELSE '0' END AS familiar,
-                       CASE WHEN (SELECT encrypt(? , ? , 'aes')) = ?
-                            THEN 1
-                            ELSE 0
-                       END flg_clave";
-		    $result = $this->db->query($sql, array($s_usr, $s_usr, $s_usr, $s_pwd, $s_pwd, CLAVE, $s_pwd, $s_pwd, $s_usr, $s_pwd, $s_pwd, CLAVE, $s_pwd, $s_pwd, $s_pwd, $s_pwd, CLAVE));
-		    return $result->row_array();
+		    $sql = "SELECT COUNT(p.nid_persona) AS existe
+		           FROM persona p
+		          WHERE p.flg_acti = '1'
+		           AND LOWER(p.usuario) ~* LOWER(?)
+		           AND (p.clave) = (?)";
+		    $result = $this->db->query($sql, array($s_usr, $s_pwd));
+		    return $result->result_array();
 		}
 		
 		function getRolesByuser($idUser) {

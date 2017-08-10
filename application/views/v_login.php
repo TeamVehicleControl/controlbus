@@ -47,15 +47,15 @@
                 </div>
                 <div class="col-sm-12">
                     <div id="clave-show" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" " id="cont_clave">
-                        <input class="mdl-textfield__input" type="password" id="password">
+                        <input class="mdl-textfield__input" type="password" id="password" onkeyup="login()">
                         <label class="mdl-textfield__label" for="password">Contrase&ntilde;a</label>
                         <span class="mdl-textfield__error" id="incPass"></span>
                         <a id="showpas"  class="mdl-button mdl-js-button mdl-js-button-ripple-effect see-pass toogle-password"><i  class="mdi mdi-visibility_off text-rigth "></i></a>
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
-                        <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="check">
+                        <input type="checkbox" id="check" class="mdl-checkbox__input">
                         <span class="mdl-checkbox__label">Recordarme</span>
                     </label>
                 </div>
