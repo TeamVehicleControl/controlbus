@@ -31,10 +31,9 @@
             <div id="main" class="mdl-card">
                 <div id="opacity"></div>
                 <video autoplay loop id="video" muted>
-    				<source src="<?php echo RUTA_VIDEO?>mercedes.mp4" type="video/mp4">
-    				<source src="<?php echo RUTA_VIDEO?>mercedes.ogv" type="video/ogv">
-    				<source src="<?php echo RUTA_VIDEO?>mercedes.webm" type="video/webm">
-    				<embed src="<?php echo RUTA_VIDEO?>mercedes.mp4" type="application/x-shockwave-flash" width="650" height="300" allowscriptaccess="always" allowfullscreen="true"></embed>
+    				<source src="<?php echo RUTA_IMG?>video/mercedes.mp4" type="video/mp4">
+    				<source src="<?php echo RUTA_IMG?>video/mercedes.ogv" type="video/ogv">
+    				<source src="<?php echo RUTA_IMG?>video/mercedes.webm" type="video/webm">
     			</video>
                 <div class="col-sm-12 text-center">
                     <h1>CONTROL BUS</h1>
