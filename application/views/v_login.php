@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Plataforma virtual de mantto</title>
+        <title>Controlbus</title>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
         <meta http-equiv="X-UA-Compatible"  content="IE=edge">
@@ -15,6 +15,7 @@
         <meta name="theme-color"            content="#FFFFFF">
         <meta name="description"            content="Simple, r&aacute;pido , econ&oacute;mico model tiene todo">
         
+        <link type="image/x-icon"   rel="shortcut icon" href="<?php echo RUTA_IMG?>header/car.ico">
         <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-3.3.6/css/bootstrap.min.css?v=<?php echo time();?>">
 		<link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>mdl/css/material.min.css?v=<?php echo time();?>">
 		<link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.min.css?v=<?php echo time();?>">
@@ -60,6 +61,14 @@
                 </div>
                 <div class="col-sm-12">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="logear()" id="btnLoginAdminPass">INGRESAR</button>
+                </div>
+                <div class="col-sm-12">
+                    <div class="col-xs-6 p-l-0">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="logear()" id="btnLoginAdminPass">INGRESAR</button>
+                    </div>
+                    <div class="col-xs-6 p-r-0">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="logear()" id="btnLoginAdminPass">INGRESAR</button>
+                    </div>
                 </div>
             </div>
         </section>

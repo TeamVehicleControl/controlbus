@@ -90,18 +90,3 @@ display: block;
    width: 30px;
    padding: 0;
 }
-
-.header-border{
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   height: 50%;
-   width: 100%;
-   z-index: 0;
-   -webkit-transition: height 1s ease-in-out;
-   -moz-transition: height 1s ease-in-out;
-   -o-transition: height 1s ease-in-out;
-   transition: height 1s ease-in-out;
-background-color: red;
-}
