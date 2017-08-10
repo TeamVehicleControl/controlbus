@@ -23,8 +23,8 @@
         <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
         <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_FONTS?>font-awesome-4.7.0/css/font-awesome.min.css?v=<?php echo time();?>">
         <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.css?v=<?php echo time();?>">
-        <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_CSS?>login.css?v=<?php echo time();?>">
         <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_CSS?>menu.css?v=<?php echo time();?>"> 
+        <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_CSS?>login.css?v=<?php echo time();?>">
     </head>
     <body>
         <section>
