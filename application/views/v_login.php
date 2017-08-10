@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Controlbus</title>
+        <title>VehicMant</title>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
         <meta http-equiv="X-UA-Compatible"  content="IE=edge">
@@ -36,19 +36,20 @@
     				<source src="<?php echo RUTA_IMG?>video/mercedes.webm" type="video/webm">
     			</video>
                 <div class="col-sm-12 text-center">
-                    <h1>CONTROL BUS</h1>
+                    <h1>VehicMant</h1>
                 </div>
                 <div class="col-sm-12" id="loginForm">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cont_usuario">
                         <input class="mdl-textfield__input" type="text" id="usuario">
                         <label class="mdl-textfield__label" for="Username" autofocus="autofocus">Usuario</label>
-                        <span class="mdl-textfield__error">Tu usuario y/o contrase&ntilde;a son incorrectas.</span>
+                        <span class="mdl-textfield__error" id="incUser"></span>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div id="clave-show" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" " id="cont_clave">
                         <input class="mdl-textfield__input" type="password" id="password">
                         <label class="mdl-textfield__label" for="password">Contrase&ntilde;a</label>
+                        <span class="mdl-textfield__error" id="incPass"></span>
                         <a id="showpas"  class="mdl-button mdl-js-button mdl-js-button-ripple-effect see-pass toogle-password"><i  class="mdi mdi-visibility_off text-rigth "></i></a>
                     </div>
                 </div>
@@ -63,10 +64,10 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="col-xs-6 p-l-0">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="logear()" id="btnLoginAdminPass">INGRESAR</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">FaceBook</button>
                     </div>
                     <div class="col-xs-6 p-r-0">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="logear()" id="btnLoginAdminPass">INGRESAR</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Google</button>
                     </div>
                 </div>
             </div>

@@ -21,9 +21,9 @@ class C_login extends CI_Controller {
 	function logear() {
 	    $data['error'] = EXIT_ERROR;
 	    try{
-    	    $user        = utf8_decode(_post('user'));
-    	    $password    = utf8_decode(_post('pass'));
-    	    $remember    = $this->input->post('check');
+	        $user        = __getTextValue('user');
+	        $password    = __getTextValue('pass');
+    	    $remember    = _post('check');
     	    if($user == null && $password == null) {
     	        $data['error'] = '<p style="font-size: 12px;color:#f44336;margin-right:-8px">
             				          <label style="float:left">Ingrese usuario y/o contrase&ntilde;a</label>

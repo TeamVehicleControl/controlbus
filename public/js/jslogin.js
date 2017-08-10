@@ -39,11 +39,17 @@ function logear() {
 	if ($('#check').is(":checked")) {
 		check = '1';
 	}
-	if(user == null || pass == null) {
-		msj('error','Su usuario o clave es incorrecto');
+	if(user.length == 0) {
+		$("#incUser").text("Tu usuario y/o contrase&ntilde;a son incorrectas");
+		console.log('entra');
 		return;
 	}
-	if(usuario != null && password != null) {
+	if(pass.length == 0) {
+		$("#incPass").text("Tu usuario y/o contrase&ntilde;a son incorrectas");
+		console.log('entra2');
+		return;
+	}
+	if(usuario.length != 0 && password != 0) {
 		$.ajax({
 			data  : { user  : user,
 					  pass  : pass,
@@ -55,7 +61,7 @@ function logear() {
 				data = JSON.parse(data);
 				if(data.error == 0){
 				}
-				msj('error',data.msj);
+				//msj('error',data.msj);
 			} catch (err){
 				msj('error',err.message);
 			}
