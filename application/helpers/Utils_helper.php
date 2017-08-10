@@ -111,3 +111,46 @@ if(!function_exists('_logLastQuery')) {
          return $dec;
      }
  }
+ 
+ if(!function_exists('__regexRemoveTag')) {
+     /** quita las etiqueta html
+      *  $replace => ''
+      *  $html => <h1>hello</h1>
+      *  return => hello
+      */
+     function __regexRemoveTag($replace, $html) {
+         return preg_replace('/<[^>]*>/', $replace, $html);
+     }
+ }
+ 
+ if(!function_exists('__soloLetras')) {
+     function __soloLetras($palabras, $texto){
+         $pattern = '/^[a-zA-Z_áéíóúñÁÉÍÓÚÑ\s]*$/';
+         if (filter_var($palabras, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>$pattern))) == null) {
+             throw new Exception($texto);
+         }
+     }
+ }
+ 
+ if(!function_exists('__getTextValue')) {
+     /** Recibe la descripcion que se envia
+      * Quita espacions a los costados y realiza utf8_decode
+      */
+     function __getTextValue($postIndex) {
+         return trim(__regexRemoveTag('',__only1whitespace(utf8_decode(_post($postIndex)))));
+     }
+ }
+ 
+ if(!function_exists('__only1whitespace')) {
+     /**
+      * Elimina los espacios en blanco multiples
+      * @since 27.09.2016
+      * @param $text variable que sera transformada
+      * @return variable transformada
+      */
+     
+     function __only1whitespace($text) {
+         $text = preg_replace('!\s+!', ' ', $text);
+         return trim($text);
+     }
+ }
