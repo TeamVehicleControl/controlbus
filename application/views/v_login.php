@@ -27,6 +27,7 @@
         <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_CSS?>login.css?v=<?php echo time();?>">
     </head>
     <body>
+        <div class="header-bus"></div>
         <section>
             <div id="main" class="mdl-card">
                 <div id="opacity"></div>

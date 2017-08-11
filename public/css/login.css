@@ -1,4 +1,27 @@
 @CHARSET "ISO-8859-1";
+body{
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	background-color: #EEF0F3;
+}
+
+/* Header Bus */
+.header-bus {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50%;
+	width: 100%;
+	z-index: 0;
+	-webkit-transition: height 1s ease-in-out;	
+	-moz-transition: height 1s ease-in-out;	
+	-o-transition: height 1s ease-in-out;	
+	transition: height 1s ease-in-out;
+	background-color: #003B63;
+}
+
 #main{
 background-color: rgba(0, 0, 0, 0.45);
 max-width: 350px;
@@ -17,11 +40,12 @@ margin: 20px 0;
 }
 
 #main video{
-   position: absolute;
-   top: -60px;
-   right: -275px;
-   height: 131%;
-z-index: -1;
+    position: absolute;
+    top: -72px;
+    right: -240px;
+    height: 131%;
+    z-index: -1;
+    width: 825px;
 }
 
 #opacity{
