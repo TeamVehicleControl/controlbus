@@ -46,6 +46,20 @@
     		<header class="mdl-layout__header">
     			<div class="mdl-layout__header-row">
     			    <div class="mdl-layout-spacer"></div>
+    			    <nav class="mdl-navigation">
+                        <a class="mdl-button mdl-js-button mdl-button--icon" href=""><i class="mdi mdi-notifications"></i></a>
+                        <div class="btn-group">
+        					<button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect login dropdown-toggle" data-toggle="dropdown" 	aria-haspopup="true" aria-expanded="false">
+        						<img class="inline" src="public/img/header/nouser.jpg" alt="">
+        				    	<p class="inline">Julio Sulca</p> 
+        				    	<i class="mdi mdi-arrow_drop_down inline"></i>
+        					</button>
+        					<ul class="dropdown-menu">
+        						<li><a href="#">Profile</a></li>
+        						<li><a href="#">Logout</a></li>
+        					</ul>
+        				</div>
+                    </nav>
     			</div>
     		</header>
     		<div class="mdl-layout__drawer">

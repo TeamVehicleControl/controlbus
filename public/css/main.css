@@ -31,7 +31,7 @@
 }
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover i,
 .mdl-navigation__link.active i{
-    color: #57386E;
+    color: #003B63;
 }
 .mdl-navigation__link.active .arrow-right{
     display: block;
@@ -60,4 +60,20 @@
 .mdl-layout__drawer{
     background-color: #FEFEFE;
     width: 100px;
+}
+
+.login p {
+    color: #757575;
+    font-weight: bold;
+    margin: 0;
+    text-transform: initial;
+}
+.login img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.inline {
+    display: inline-block;
+    vertical-align: middle;
 }
