@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>VehicMant</title>
+        <title>VehikMant</title>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
         <meta http-equiv="X-UA-Compatible"  content="IE=edge">
@@ -37,7 +37,7 @@
     				<source src="<?php echo RUTA_IMG?>video/mercedes.webm" type="video/webm">
     			</video>
                 <div class="col-sm-12 text-center">
-                    <h1>VehicMant</h1>
+                    <h1>VehikMant</h1>
                 </div>
                 <div class="col-sm-12" id="loginForm">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cont_usuario">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Controlbus</title>
+        <title>VehikMant</title>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
         <meta http-equiv="X-UA-Compatible"  content="IE=edge">
@@ -143,7 +143,8 @@
     	
     	<script type="text/javascript">
         	$(document).ready(function() {
-            google.charts.load('current', {'packages':['corechart', 'line', 'bar', 'gauge', 'geochart']});
+            google.charts.load('current', {'packages':['corechart', 'line', 'bar', 'gauge', 'geochart'],
+            				   'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'});
             google.charts.setOnLoadCallback(drawChart);
             google.charts.setOnLoadCallback(drawTrendlines);
             google.charts.setOnLoadCallback(drawRegionsMap);
@@ -151,17 +152,20 @@
 
 
             function drawRegionsMap() {
-              var data = google.visualization.arrayToDataTable([
-                ['Country', 'Popularity'],
-                ['Germany', 200],
-                ['United States', 300],
-                ['Brazil', 400],
-                ['Canada', 500],
-                ['France', 600],
-                ['RU', 700]
-              ]);
+            	var data = google.visualization.arrayToDataTable([
+                    ['City',   'Cant. Fallas', 'costo'],
+                    ['Lima',       847,    5.672],
+                    ['Arequipa',   784,     2.923],
+                    ['Cusco',      348,     3.851],
+                    ['Trujillo',   682,     2.217],
+                    ['Piura',      377,     1.892]
+                  ]);
 
-              var options = {};
+                  var options = {
+                    region: 'PE',
+                    displayMode: 'markers',
+                    colorAxis: {colors: ['#8BC34A', '#FFEB3B']}
+                  };
 
               var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
@@ -171,13 +175,14 @@
             function drawChart() {
            	        var data = google.visualization.arrayToDataTable([
            	          ['Label', 'Value'],
-           	          ['Memory', 80],
-           	          ['CPU', 55],
-           	          ['Network', 68]
+           	          ['Plan Mantto', 80],
+           	          ['Inspec. T\u00E9c.', 55],
+           	          ['Limpieza', 68],
+              	      ['Residuos', 20]
            	        ]);
 
            	        var options = {
-           	          width: 400, height: 120,
+           	          width: 500, height: 200,
            	          redFrom: 90, redTo: 100,
            	          yellowFrom:75, yellowTo: 90,
            	          minorTicks: 5
@@ -206,8 +211,8 @@
             function drawTrendlines() {
                 var data = new google.visualization.DataTable();
                 data.addColumn('number', 'X');
-                data.addColumn('number', 'Dogs');
-                data.addColumn('number', 'Cats');
+                data.addColumn('number', 'Motor');
+                data.addColumn('number', 'El\u00E9ctricas');
 
                 data.addRows([
                   [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
@@ -226,7 +231,7 @@
 
                 var options = {
                   hAxis: {
-                    title: 'Tiempo(dias)'
+                    title: 'Tiempo(d\u00EDas)'
                   },
                   vAxis: {
                     title: 'Fallas'
@@ -244,16 +249,16 @@
 
             function drawChartZone() {
                 var data = google.visualization.arrayToDataTable([
-                  ['Year', 'Sales', 'Expenses'],
-                  ['2013',  1000,      400],
-                  ['2014',  1170,      460],
-                  ['2015',  660,       1120],
-                  ['2016',  1030,      540]
+                  ['Year', 'Repuestos', 'Mantenimiento'],
+                  ['2013',  1000      ,  400],
+                  ['2014',  1170      ,  460],
+                  ['2015',  660       ,  1120],
+                  ['2016',  1030      ,  540]
                 ]);
 
                 var options = {
                   title: 'Calidad',
-                  hAxis: {title: 'Anio',  titleTextStyle: {color: '#333'}},
+                  hAxis: {title: 'A\u00F1o',  titleTextStyle: {color: '#333'}},
                   vAxis: {minValue: 0}
                 };
 

@@ -37,14 +37,14 @@ class C_login extends CI_Controller {
             				             <label style="float:left">Una contrase&ntilde;a es requerida</label>
             				         </p>';
     	        $data['sw'] = 2;
-    	    } else if($user == 'jhiberico' && $password == '123' || $user == 'jminaya' && $password = '123'){
+    	    } else if($user == 'jhiberico' && $password == '123' || $user == 'jminaya' && $password == '123' || $user == 'jsulca' && $password == '123'){
     	        //$ingreso = $this->M_usuario->getIngreso((trim($user)), $password);
     	        //_log($ingreso);
     	        //$this->session->set_userdata($dataUser);
     	        $data['url'] = 'http://localhost:8080/controlbus/C_main';
     	        $data['remember'] = $check;
     	        $data['error'] = EXIT_SUCCESS;
-    	    }else if($user != 'jhiberico' && $password != '123') {
+    	    }else if($user != 'jhiberico' && $password != '123' || $user != 'jminaya' && $password != '123' || $user != 'jsulca' && $password != '123') {
     	        return;
     	    }
 	    }  catch(Exception $e){
