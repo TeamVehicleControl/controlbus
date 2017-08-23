@@ -154,3 +154,30 @@ if(!function_exists('_logLastQuery')) {
          return trim($text);
      }
  }
+ 
+ if(!function_exists('_getSesion')) {
+     /**
+      */
+     function _getSesion($sessionIndex) {
+         $CI =& get_instance();
+         return $CI->session->userdata($sessionIndex);
+     }
+ }
+ 
+ if(!function_exists('_setSesion')) {
+     /**
+      */
+     function _setSesion($sessionArray) {
+         $CI =& get_instance();
+         return $CI->session->set_userdata($sessionArray);
+     }
+ }
+ 
+ if(!function_exists('_unsetSesion')) {
+     /**
+      */
+     function _unsetSesion($sessionKey) {
+         $CI =& get_instance();
+         return $CI->session->unset_userdata($sessionKey);
+     }
+ }

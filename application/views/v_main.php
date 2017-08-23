@@ -55,8 +55,8 @@
         				    	<i class="mdi mdi-arrow_drop_down inline"></i>
         					</button>
         					<ul class="dropdown-menu">
-        						<li><a href="#">Profile</a></li>
-        						<li><a href="#">Logout</a></li>
+        						<li><a href="#">Perfil</a></li>
+        						<li><a onclick="logout()">cerrar</a></li>
         					</ul>
         				</div>
                     </nav>
@@ -65,7 +65,7 @@
     		<div class="mdl-layout__drawer">
     			<span class="mdl-layout-title"><i class="mdi mdi-menu"></i></span>
     			<nav class="mdl-navigation p-t-0">
-    				<a class="mdl-navigation__link" href="upload.html"><div class="arrow-right"></div><i class="mdi mdi-priority_high"></i><p>Alertas</p></a>
+    				<a class="mdl-navigation__link"><div class="arrow-right"></div><i class="mdi mdi-priority_high" onclick="abirModalAlertas()"></i><p>Alertas</p></a>
     				<a class="mdl-navigation__link active" href=""><div class="arrow-right"></div><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>
     				<a class="mdl-navigation__link" href="users.html"><i class="mdi mdi-group_add"></i><p>Proveedores</p></a>
     				<a class="mdl-navigation__link" href=""><i class="mdi mdi-person"></i><p>Clientes</p></a>
@@ -130,20 +130,36 @@
     		</main>
 		</div>
 		
+		<div class="modal fade" id="modalAlertas" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">                
+                    <div class="mdl-card" >
+					    <div class="mdl-card__title">
+                            <p class="m-0"></p>
+                            <div id="chart_div7" class="chart_new" style="display:block"></div>
+    					</div>
+    					<div class="mdl-card__actions p-t-20">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+		
         
         <script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_JS?>jquery-3.1.0.min.js?v=<?php echo time();?>"></script>
         <script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_JS?>jquery-1.12.1.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>bootstrap-3.3.6/js/bootstrap.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>mdl/js/material.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>toaster/toastr.min.js?v=<?php echo time();?>"></script>
-    	<script charset="UTF-8" type="text/javascript" async src="<?php echo RUTA_JS?>jslogin.js?v=<?php echo time();?>"></script>
+    	<script charset="UTF-8" type="text/javascript" async src="<?php echo RUTA_JS?>jsmain.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_PLUGINS?>pace/pace.min.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_PLUGINS?>google_chart/loader.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>   
     	
     	<script type="text/javascript">
         	$(document).ready(function() {
-            google.charts.load('current', {'packages':['corechart', 'line', 'bar', 'gauge', 'geochart'],
+            google.charts.load('current', {'packages':['corechart', 'line', 'bar', 'gauge', 'geochart', 'table'],
             				   'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'});
             google.charts.setOnLoadCallback(drawChart);
             google.charts.setOnLoadCallback(drawTrendlines);

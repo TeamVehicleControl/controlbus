@@ -80,8 +80,12 @@
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>mdl/js/material.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>toaster/toastr.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" async src="<?php echo RUTA_JS?>jslogin.js?v=<?php echo time();?>"></script>
+    	<script src="<?php echo RUTA_PLUGINS?>google_chart/loader.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_PLUGINS?>pace/pace.min.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>   
+    	<script src="<?php echo RUTA_JS?>libs/jquery/jquery-migrate-1.2.1.min.js?v=<?php echo time();?>"></script>
+    	<script src="<?php echo RUTA_JS?>libs/jquery/jquery-1.11.2.min.js?v=<?php echo time();?>"></script>
+        <script src="<?php echo RUTA_JS?>libs/jquery-ui/jquery-ui.min.js?v=<?php echo time();?>"></script>
     	
     	<script type="text/javascript">
     	   var video = document.getElementById('video');

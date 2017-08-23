@@ -16,7 +16,25 @@ class C_login extends CI_Controller {
     
 	public function index()
 	{
-		$this->load->view('v_login');
+	    $cookie_name  = "user";
+	    $cookie_name1 = "pass";
+	    $cookie_name2 = "check";
+	    //$logeoUsario = _getSesion('usuario');
+	    $logeoUsario = null;
+	    if($logeoUsario == null) {
+    	    if(isset($_COOKIE[$cookie_name2])) {
+    	        $usuario  = _simple_decrypt($_COOKIE[$cookie_name]);
+    	        $password = _simple_decrypt($_COOKIE[$cookie_name1]);
+    	        $check    = $_COOKIE[$cookie_name2];
+    	        
+    	        $data['usuarioLogin']  = $usuario;
+    	        $data['passwordLogin'] = $password;
+    	        $data['checkLogin']    = $check;
+    	    }
+    		$this->load->view('v_login');
+	    } else {
+	        Redirect('/c_main');
+	    }
 	}
 	
 	function logear() {
@@ -38,7 +56,12 @@ class C_login extends CI_Controller {
             				         </p>';
     	        $data['sw'] = 2;
     	    } else if($user == 'jhiberico' && $password == '123' || $user == 'jminaya' && $password == '123' || $user == 'jsulca' && $password == '123'){
-    	        //$ingreso = $this->M_usuario->getIngreso((trim($user)), $password);
+    	       //$ingreso = $this->M_usuario->getIngreso((trim($user)), $password);
+    	       $dataUser = array("usuario"           => 'jhiberico',//PARA EL MANEJO DE DATOS
+                    	         "nombre_abvr"       => 'Jhonatan Iberico',
+                    	         "nombre_completo"   => 'Jhonatan Iberico Mesia',
+                    	         'flg_clave'         => 1,
+                    	         "roles"             => 'Administrador');
     	        //_log($ingreso);
     	        //$this->session->set_userdata($dataUser);
     	        $data['url'] = 'http://localhost:8080/controlbus/C_main';

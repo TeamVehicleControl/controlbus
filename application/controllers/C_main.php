@@ -20,6 +20,18 @@ class C_main extends CI_Controller {
 	 */
 	public function index()
 	{
+	    //_log(_getSesion("usuario"));
 		$this->load->view('v_main');
+	}
+	
+	function logout() {
+	    $data['error'] = EXIT_ERROR;
+	    try{
+	        $data['url'] = 'http://localhost:8080/controlbus';
+	        $data['error'] = EXIT_SUCCESS;
+	    }  catch(Exception $e){
+	        $data['msj'] = $e->getMessage();
+	    }
+	    echo json_encode(array_map('utf8_encode', $data));
 	}
 }
