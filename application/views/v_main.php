@@ -161,7 +161,7 @@
                                 <div id="regions_div" class="chart_new" style="display:block"></div>
                             </div>
                             <div class="mdl-card__menu">
-                                <button class="mdl-button mdl-js-button mdl-button--icon">
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="aDownload2" download="filename.jpg">
                                     <i class="mdi mdi-file_download"></i>
                                 </button>
                             </div>
@@ -175,7 +175,7 @@
                                 <div id="chart_div5" class="chart_new" style="display:block"></div>
                             </div>
                             <div class="mdl-card__menu">
-                                <button class="mdl-button mdl-js-button mdl-button--icon">
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="aDownload1" download="filename.jpg" >
                                     <i class="mdi mdi-file_download"></i>
                                 </button>
                             </div>
@@ -189,18 +189,50 @@
             <div class="modal-dialog modal-md">
                 <div class="modal-content">                
                     <div class="mdl-card">
-					    <div class="mdl-card__title">
-    					</div>
+					    <div class="mdl-card__title">Alerta de fallas</div>
     					<div class="mdl-card__supporting-text">
                             <div id="chart_div7" class="chart_new" style="display:block"></div>
     					</div>
     					<div class="mdl-card__actions p-t-20">
                             <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" onclick="cerrarAlertas()">Cerrar</button>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" onclick="gotoAlertas()">ir</button>
                         </div>
                         <div class="mdl-card__menu">
                             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onclick="refreshTable();" data-refresh="true">
                                 <i class="mdi mdi-refresh"></i>
                             </button>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+        
+        <div class="modal fade" id="modalDetalleAlertas" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">                
+                    <div class="mdl-card">
+					    <div class="mdl-card__title">Detalle de fallas</div>
+    					<div class="mdl-card__supporting-text">
+                            <div id="chart_divDeta" class="chart_new" style="display:block"></div>
+    					</div>
+    					<div class="mdl-card__actions p-t-20">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+        
+        <div class="modal fade" id="modalDetalleMapa" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">                
+                    <div class="mdl-card">
+					    <div class="mdl-card__title">Detalle de fallas por zona</div>
+    					<div class="mdl-card__supporting-text">
+                            <div id="chart_divDetaMap" class="chart_new" style="display:block"></div>
+    					</div>
+    					<div class="mdl-card__actions p-t-20">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>
@@ -268,8 +300,33 @@
                 };
 
                 var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+                google.visualization.events.addListener(chart, 'select', selectHandler);
                 chart.draw(data, options);
+
+                function selectHandler() {
+            		var selectedItem = chart.getSelection()[0];
+            	    if (selectedItem) {
+                	    abrirModalDetalle();
+            	    }
+            	}
               }
+
+            function abrirModalDetalle() {
+        			var data = new google.visualization.DataTable();
+        		    data.addColumn('string', 'Alerta');
+        		    data.addColumn('string', 'Detalle');
+        		    data.addRows([
+        		      ['Motor',  'Se recalento el motor y empezo a fallar'],
+        		      ['Gasolina',   'No mide bien la gasolina'],
+        		      ['Bujia', 'Se quemo y malogro el sistema electrico'],
+        		      ['Carburador',   'Recalienta mucho'],
+        		      ['Sistema electrico',   'Se quemo un clable se apago el carro'],
+        		    ]);
+        	    var table = new google.visualization.Table(document.getElementById('chart_divDeta'));
+
+        	    table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+                modal('modalDetalleAlertas');
+            }
 
             function drawChartZone() {
                 var data = google.visualization.arrayToDataTable([
@@ -287,8 +344,94 @@
                 };
 
                 var chart = new google.visualization.AreaChart(document.getElementById('chart_div5'));
+                google.visualization.events.addListener(chart, 'ready', function () {
+                    $('#aDownload1').attr("href", chart.getImageURI());
+                });
+                            
                 chart.draw(data, options);
               }
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                  ['Label', 'Value'],
+                  ['Plan Mantto', 80],
+                  ['Inspec. T\u00E9c.', 55],
+                  ['Limpieza', 68],
+         	      ['Residuos', 20]
+                ]);
+
+                var options = {
+                  width: 500, height: 200,
+                  redFrom: 90, redTo: 100,
+                  yellowFrom:75, yellowTo: 90,
+                  minorTicks: 5
+                };
+
+                var chart = new google.visualization.Gauge(document.getElementById('chart_div1'));
+                chart.draw(data, options);
+
+                setInterval(function() {
+                  data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+                  chart.draw(data, options);
+                }, 13000);
+                setInterval(function() {
+                  data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+                  chart.draw(data, options);
+                }, 5000);
+                setInterval(function() {
+                  data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+                  chart.draw(data, options);
+                }, 26000);
+             	}
+
+            function drawRegionsMap() {
+            	var data = google.visualization.arrayToDataTable([
+                    ['City',   'Cant. Fallas', 'costo'],
+                    ['Lima',       847,    5.672],
+                    ['Arequipa',   784,     2.923],
+                    ['Cusco',      348,     3.851],
+                    ['Trujillo',   682,     2.217],
+                    ['Piura',      377,     1.892]
+                  ]);
+
+                  var options = {
+                    region: 'PE',
+                    displayMode: 'markers',
+                    colorAxis: {colors: ['#8BC34A', '#FFEB3B']}
+                  };
+
+              var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+              google.visualization.events.addListener(chart, 'select', selectHandler);
+              google.visualization.events.addListener(chart, 'ready', function () {
+                  $('#aDownload2').attr("href", chart.getImageURI());
+              });
+              chart.draw(data, options);
+
+              function selectHandler() {
+            		var selectedItem = chart.getSelection()[0];
+            	    if (selectedItem) {
+                	    abrirModalDetalleMapa();
+            	    }
+            	}
+            }
+
+            function abrirModalDetalleMapa() {
+            	var data = new google.visualization.DataTable();
+    		    data.addColumn('string', 'Alerta');
+    		    data.addColumn('string', 'Detalle');
+    		    data.addColumn('number', 'Costo');
+    		    data.addRows([
+    		      ['Motor',  'Se recalento el motor y empezo a fallar', {v: 350, f: '$350'}],
+    		      ['Gasolina',   'No mide bien la gasolina', {v: 20, f: '$20'}],
+    		      ['Bujia', 'Se quemo y malogro el sistema electrico', {v: 200, f: '$200'}],
+    		      ['Carburador',   'Recalienta mucho', {v: 80, f: '$80'}],
+    		      ['Sistema electrico',   'Se quemo un clable se apago el carro', {v: 20, f: '$20'}],
+    		    ]);
+    	    var table = new google.visualization.Table(document.getElementById('chart_divDetaMap'));
+
+    	    table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+            modal('modalDetalleMapa');
+            }
             });
     	   var video = document.getElementById('video');
             video.addEventListener('click',function(){
