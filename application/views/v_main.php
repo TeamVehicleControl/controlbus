@@ -134,6 +134,9 @@
             <div class="modal-dialog modal-md">
                 <div class="modal-content">                
                     <div class="mdl-card" >
+                    	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onclick="refreshTable();" data-refresh="true">
+                            <i class="mdi mdi-refresh"></i>
+                        </button>
 					    <div class="mdl-card__title">
                             <p class="m-0"></p>
                             <div id="chart_div7" class="chart_new" style="display:block"></div>
