@@ -192,7 +192,7 @@
                             <div id="chart_div7" class="chart_new" style="display:block"></div>
     					</div>
     					<div class="mdl-card__actions p-t-20">
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal">Cerrar</button>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" onclick="cerrarAlertas()">Cerrar</button>
                         </div>
                     </div>
                 </div>

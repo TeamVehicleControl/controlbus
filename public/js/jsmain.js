@@ -1,24 +1,39 @@
 $(window).load(function() {
 	$("#modalAlertas").modal('show');
+	google.charts.setOnLoadCallback(drawTable1);
 });
 
 function abirModalAlertas() {
 	google.charts.setOnLoadCallback(drawTable1);
 	modal('modalAlertas');
-	drawTable1();
+	cerrarAlertas();
 }
 
 function drawTable1() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Alerta');
-    data.addColumn('number', 'Costo');
-    data.addColumn('boolean', 'Solucionadas');
-    data.addRows([
-      ['Motor',  {v: 10000, f: '$10,000'}, true],
-      ['Gasolina',   {v: 8000,  f: '$8,000'},  false],
-      ['Bujia', {v: 12500, f: '$12,500'}, true],
-      ['Carburador',   {v: 7000,  f: '$7,000'},  true]
-    ]);
+	if(time == 1) {
+		var data = new google.visualization.DataTable();
+	    data.addColumn('string', 'Alerta');
+	    data.addColumn('number', 'Costo');
+	    data.addColumn('boolean', 'Solucionadas');
+		data.addRows([
+		      ['Motor',  {v: 10000, f: '$10,000'}, true],
+		      ['Gasolina',   {v: 8000,  f: '$8,000'},  true],
+		      ['Bujia', {v: 12500, f: '$12,500'}, true],
+		      ['Carburador',   {v: 7000,  f: '$7,000'},  true],
+		    ]);
+	}else if(time == 2) {
+		var data = new google.visualization.DataTable();
+	    data.addColumn('string', 'Alerta');
+	    data.addColumn('number', 'Costo');
+	    data.addColumn('boolean', 'Solucionadas');
+	    data.addRows([
+	      ['Motor',  {v: 10000, f: '$10,000'}, true],
+	      ['Gasolina',   {v: 8000,  f: '$8,000'},  true],
+	      ['Bujia', {v: 12500, f: '$12,500'}, true],
+	      ['Carburador',   {v: 7000,  f: '$7,000'},  true],
+	      ['Sistema eléctrico',   {v: 3500,  f: '$3,500'},  false],
+	    ]);
+	}
 
     var table = new google.visualization.Table(document.getElementById('chart_div7'));
 
@@ -43,20 +58,133 @@ function logout() {
 	});
 }
 
+var cont = 1;
 function refreshTable() {
-	 var data = new google.visualization.DataTable();
-	    data.addColumn('string', 'Alerta');
-	    data.addColumn('number', 'Costo');
-	    data.addColumn('boolean', 'Solucionadas');
-	    data.addRows([
-	      ['Motor',  {v: 10000, f: '$10,000'}, true],
-	      ['Gasolina',   {v: 8000,  f: '$8,000'},  false],
-	      ['Bujia', {v: 12500, f: '$12,500'}, true],
-	      ['Carburador',   {v: 7000,  f: '$7,000'},  true],
-	      ['Chasis',   {v: 2000,  f: '$2,000'},  false],
-	    ]);
+	var tabla = null;
+	$.ajax({
+		url   : 'C_main/generarPalabras',
+		type  : 'POST'
+	}).done(function(data){
+		try{
+			data = JSON.parse(data);
+			if(data.error == 0){
+				if(time == 1) {
+					return;
+				}
+				if(time == 2) {
+					if(cont == 1) {
+						var data = new google.visualization.DataTable();
+					    data.addColumn('string', 'Alerta');
+					    data.addColumn('number', 'Costo');
+					    data.addColumn('boolean', 'Solucionadas');
+					    data.addRows([
+					    			  ['Motor',  {v: 10000, f: '$10,000'}, true],
+							          ['Gasolina',   {v: 8000,  f: '$8,000'},  true],
+							          ['Bujia', {v: 12500, f: '$12,500'}, true],
+							          ['Carburador',   {v: 7000,  f: '$7,000'},  true],
+								    ]);
+					}else if(cont == 2) {
+						var data = new google.visualization.DataTable();
+					    data.addColumn('string', 'Alerta');
+					    data.addColumn('number', 'Costo');
+					    data.addColumn('boolean', 'Solucionadas');
+					    data.addRows([
+					    			  ['Motor',  {v: 10000, f: '$10,000'}, true],
+							          ['Gasolina',   {v: 8000,  f: '$8,000'},  true],
+							          ['Bujia', {v: 12500, f: '$12,500'}, true],
+							          ['Carburador',   {v: 7000,  f: '$7,000'},  true],
+							          ['Sistema eléctrico',   {v: 3500,  f: '$3,500'},  false],
+								    ]);
+					}else if(cont == 3) {
+						var data = new google.visualization.DataTable();
+					    data.addColumn('string', 'Alerta');
+					    data.addColumn('number', 'Costo');
+					    data.addColumn('boolean', 'Solucionadas');
+					    data.addRows([
+					    	 ['Motor',  {v: 10000, f: '$10,000'}, true],
+					         ['Gasolina',   {v: 8000,  f: '$8,000'},  true],
+					         ['Bujia', {v: 12500, f: '$12,500'}, true],
+					         ['Carburador',   {v: 7000,  f: '$7,000'},  true],
+					         ['Sistema eléctrico',   {v: 3500,  f: '$3,500'},  false],
+					         ['Ruedas',   {v: 600,  f: '$600'},  false],
+						    ]);
+					}else if(cont == 4) {
+						var data = new google.visualization.DataTable();
+					    data.addColumn('string', 'Alerta');
+					    data.addColumn('number', 'Costo');
+					    data.addColumn('boolean', 'Solucionadas');
+					    data.addRows([
+					    	 ['Motor',  {v: 10000, f: '$10,000'}, true],
+					         ['Gasolina',   {v: 8000,  f: '$8,000'},  true],
+					         ['Bujia', {v: 12500, f: '$12,500'}, true],
+					         ['Carburador',   {v: 7000,  f: '$7,000'},  true],
+					         ['Sistema eléctrico',   {v: 3500,  f: '$3,500'},  false],
+					         ['Ruedas',   {v: 600,  f: '$600'},  false],
+					         ['Dirección',   {v: 950,  f: '$950'},  false],
+						    ]);
+					    setTimeout(function(){
+							ok();
+						}, 10000);
+					}else if(cont == 5) {
+						var data = new google.visualization.DataTable();
+					    data.addColumn('string', 'Alerta');
+					    data.addColumn('number', 'Costo');
+					    data.addColumn('boolean', 'Solucionadas');
+					    data.addRows([
+					    	 ['Motor',  {v: 10000, f: '$10,000'}, true],
+					         ['Gasolina',   {v: 8000,  f: '$8,000'},  true],
+					         ['Bujia', {v: 12500, f: '$12,500'}, true],
+					         ['Carburador',   {v: 7000,  f: '$7,000'},  true],
+					         ['Sistema eléctrico',   {v: 3500,  f: '$3,500'},  true],
+					         ['Ruedas',   {v: 600,  f: '$600'},  false],
+					         ['Dirección',   {v: 950,  f: '$950'},  false],
+						    ]);
+					}
+				}
+			    var table = new google.visualization.Table(document.getElementById('chart_div7'));
+			    table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+			    if(cont <= 4) {
+			    	cerrarAlertas();
+			    }
+			}else {
+				return;
+			}
+		} catch (err){
+			msj('error',err.message);
+		}
+	});
+}
 
-	    var table = new google.visualization.Table(document.getElementById('chart_div7'));
+var time = 1
+function cerrarAlertas() {
+	if(cont <= 5) {
+		setTimeout(function(){
+			error();
+			time = 2;
+			cont = cont+1;
+		}, 8000);
+	}
+}
 
-	    table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+function error(){
+    //una notificación de error
+	if(cont == 1) {
+		alertify.error("Nueva Falla en: El sistema eléctrico");
+		return false;
+	}else if(cont == 2) {
+		alertify.error("Nueva Falla en: las ruedas");
+		return false; 
+	}else if(cont == 3) {
+		alertify.error("Nueva Falla en: La dirección"); 
+		return false; 
+	}else if(cont == 4) {
+		alertify.error("Nueva Falla en: La dirección"); 
+		return false; 
+	}
+}
+
+function ok(){
+    //una notificación correcta
+alertify.success("Se resolvió la falla del: El sistema eléctrico"); 
+return false;
 }

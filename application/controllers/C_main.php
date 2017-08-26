@@ -34,4 +34,29 @@ class C_main extends CI_Controller {
 	    }
 	    echo json_encode(array_map('utf8_encode', $data));
 	}
+	
+	function generarPalabras() {
+	    $data['error'] = EXIT_ERROR;
+	    try{
+	        $frases = array(
+	            1 => "Ruedas",
+	            2 => "Dirección",
+	            3 => "Suspención",
+	            4 => "Frenos",
+	            5 => "Transmisión",
+	            6 => "Sistema de inyección",
+	            7 => "Sistema de refrigeración",
+	            8 => "Seguridad",
+	            9 => "Encendido",
+	            10 => "Escape",
+	        );
+	        
+	        $numero = rand (1,10);
+	        $data['palabras'] = $frases[$numero];
+	        $data['error'] = EXIT_SUCCESS;
+	    }  catch(Exception $e){
+	        $data['msj'] = $e->getMessage();
+	    }
+	    echo json_encode(array_map('utf8_encode', $data));
+	}
 }
