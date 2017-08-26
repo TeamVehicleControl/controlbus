@@ -58,6 +58,10 @@ main section {
 	width: -o-calc(100% - 10px);
 	width: calc(100% - 10px);
 }
+.mdl-card .mdl-card__title h2{
+	font-size: 20px;
+	color: #757575;
+}
 .mdl-card-nivel-general{
 	max-width: 350px;
 	margin-top: 0px;	
