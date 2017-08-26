@@ -213,3 +213,115 @@ var bar = new ProgressBar.Circle('#confiabilidad-container', {
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
 bar.animate(0.7);
+
+var bar = new ProgressBar.Line('#mantenimiento-container', {
+	strokeWidth: 4,
+	easing: 'easeInOut',
+	duration: 1400,
+	color: '#003B63',
+	trailColor: '#eee',
+	trailWidth: 1,
+	svgStyle: {width: '100%', height: '100%'},
+	text: {
+	style: {
+		color: '#999',
+	    position: 'absolute',
+	    right: '0',
+	    top: '30px',
+	    padding: 0,
+	    margin: 0,
+	    transform: null
+	  },
+	  autoStyleContainer: false
+	},
+	from: {color: '#FFEA82'},
+	to: {color: '#003B63'},
+	step: (state, bar) => {
+		bar.setText(Math.round(bar.value() * 100) + ' %');
+	}
+});
+bar.animate(0.3);
+
+var bar = new ProgressBar.Line('#inspecciones-container', {
+	strokeWidth: 4,
+	easing: 'easeInOut',
+	duration: 1400,
+	color: '#003B63',
+	trailColor: '#eee',
+	trailWidth: 1,
+	svgStyle: {width: '100%', height: '100%'},
+	text: {
+	style: {
+		color: '#999',
+	    position: 'absolute',
+	    right: '0',
+	    top: '30px',
+	    padding: 0,
+	    margin: 0,
+	    transform: null
+	  },
+	  autoStyleContainer: false
+	},
+	from: {color: '#FFEA82'},
+	to: {color: '#003B63'},
+	step: (state, bar) => {
+		bar.setText(Math.round(bar.value() * 100) + ' %');
+	}
+});
+bar.animate(0.5);
+
+var bar = new ProgressBar.Line('#limpieza-container', {
+	strokeWidth: 4,
+	easing: 'easeInOut',
+	duration: 1400,
+	color: '#003B63',
+	trailColor: '#eee',
+	trailWidth: 1,
+	svgStyle: {width: '100%', height: '100%'},
+	text: {
+	style: {
+		color: '#999',
+	    position: 'absolute',
+	    right: '0',
+	    top: '30px',
+	    padding: 0,
+	    margin: 0,
+	    transform: null
+	  },
+	  autoStyleContainer: false
+	},
+	from: {color: '#FFEA82'},
+	to: {color: '#003B63'},
+	step: (state, bar) => {
+		bar.setText(Math.round(bar.value() * 100) + ' %');
+	}
+});
+bar.animate(0.4);
+
+var bar = new ProgressBar.Line('#residuos-container', {
+	strokeWidth: 4,
+	easing: 'easeInOut',
+	duration: 1400,
+	color: '#003B63',
+	trailColor: '#eee',
+	trailWidth: 1,
+	svgStyle: {width: '100%', height: '100%'},
+	text: {
+	style: {
+		color: '#999',
+	    position: 'absolute',
+	    right: '0',
+	    top: '30px',
+	    padding: 0,
+	    margin: 0,
+	    transform: null
+	  },
+	  autoStyleContainer: false
+	},
+	from: {color: '#FFEA82'},
+	to: {color: '#003B63'},
+	step: (state, bar) => {
+		bar.setText(Math.round(bar.value() * 100) + ' %');
+	}
+});
+bar.animate(0.6);

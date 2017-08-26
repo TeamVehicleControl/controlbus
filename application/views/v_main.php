@@ -29,7 +29,7 @@
         <style>
             .chart_new {
                 width:100%;
-                min-height:400px;
+                min-height:280px;
             	margin: auto;
             }
             
@@ -103,7 +103,7 @@
                                 <h2 class="mdl-card__title-text">Inspecciones T&eacute;cnicas</h2>
                             </div>
                             <div class="mdl-card__supporting-text">
-                                
+                                <div id="inspecciones-container"></div>
                             </div>
                         </div>
                         <div class="mdl-card mdl-card-niveles">
@@ -111,7 +111,7 @@
                                 <h2 class="mdl-card__title-text">Limpieza Flota</h2>
                             </div>
                             <div class="mdl-card__supporting-text">
-                                
+                                <div id="limpieza-container"></div>
                             </div>
                         </div>
                         <div class="mdl-card mdl-card-niveles">
@@ -119,7 +119,7 @@
                                 <h2 class="mdl-card__title-text">Control de Residuos</h2>
                             </div>
                             <div class="mdl-card__supporting-text">
-                                
+                                <div id="residuos-container"></div>
                             </div>
                         </div>
                     </div>
