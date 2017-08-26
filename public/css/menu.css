@@ -9,6 +9,13 @@ main section {
 		    transition: padding .5s linear, padding-right .5s linear;	
 }
 
+#confiabilidad-container {
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
 .logo-sistema{
 	position: absolute;
 	right: 0;

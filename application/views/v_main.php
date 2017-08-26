@@ -87,7 +87,7 @@
                                 <h2 class="mdl-card__title-text">Nivel de Confiabilidad</h2>
                             </div>
                             <div class="mdl-card__supporting-text">
-                                
+                                <div id="confiabilidad-container"></div>
                             </div>
                         </div>
                         <div class="mdl-card mdl-card-niveles">
@@ -205,6 +205,7 @@
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>bootstrap-3.3.6/js/bootstrap.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>mdl/js/material.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>alertify/js/alertify.min.js?v=<?php echo time();?>"></script>
+    	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>progressbarjs/progressbar.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>toaster/toastr.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" async src="<?php echo RUTA_JS?>jsmain.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_PLUGINS?>pace/pace.min.js?v=<?php echo time();?>"></script>
@@ -336,12 +337,38 @@
                 chart.draw(data, options);
               }
             });
-    	   var video = document.getElementById('video');
-            video.addEventListener('click',function(){
-              video.play();
-            },false);
             
+        	var bar = new ProgressBar.Circle('#confiabilidad-container', {
+      		  color: '#aaa',
+      		  // This has to be the same size as the maximum width to
+      		  // prevent clipping
+      		  strokeWidth: 4,
+      		  trailWidth: 1,
+      		  easing: 'easeInOut',
+      		  duration: 1400,
+      		  text: {
+      		    autoStyleContainer: false
+      		  },
+      		  from: { color: '#aaa', width: 1 },
+      		  to: { color: '#003B63', width: 4 },
+      		  // Set default step function for all animate calls
+      		  step: function(state, circle) {
+      		    circle.path.setAttribute('stroke', state.color);
+      		    circle.path.setAttribute('stroke-width', state.width);
 
+      		    var value = Math.round(circle.value() * 100);
+      		    if (value === 0) {
+      		      circle.setText('');
+      		    } else {
+      		      circle.setText(value+'%');
+      		    }
+
+      		  }
+      		});
+      		bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+      		bar.text.style.fontSize = '2rem';
+
+      		bar.animate(0.7);  // Number from 0.0 to 1.0
         	//init();
     	</script>
     	
