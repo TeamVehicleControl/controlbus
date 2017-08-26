@@ -79,3 +79,7 @@ function login() {
 		logear();
 	}
 }
+
+function redirectConcesionaria(){
+	window.location.href = "http://localhost:8080/controlbus/";
+}
