@@ -45,7 +45,7 @@
     <body>
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     		<header class="mdl-layout__header">
-                <div>
+                <div class="logo-sistema">
                     <img class="inline" src="<?php echo RUTA_IMG?>header/logo_vehikmant.jpg" alt="vehikmant">
                 </div>
     			<div class="mdl-layout__header-row">

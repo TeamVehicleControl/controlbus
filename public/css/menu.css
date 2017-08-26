@@ -9,6 +9,17 @@ main section {
 		    transition: padding .5s linear, padding-right .5s linear;	
 }
 
+.logo-sistema{
+	position: absolute;
+	right: 0;
+	left: 0;
+	text-align: center;
+	margin: auto;
+}
+.logo-sistema img{
+	max-width: 50px;
+}
+
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label, 
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, 
 .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label{
