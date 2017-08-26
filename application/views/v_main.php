@@ -95,7 +95,7 @@
                                 <h2 class="mdl-card__title-text">Plan de Mantenimiento</h2>
                             </div>
                             <div class="mdl-card__supporting-text">
-                                
+                                <div id="mantenimiento-container"></div>
                             </div>
                         </div>
                         <div class="mdl-card mdl-card-niveles">
@@ -337,39 +337,6 @@
                 chart.draw(data, options);
               }
             });
-            
-        	var bar = new ProgressBar.Circle('#confiabilidad-container', {
-      		  color: '#aaa',
-      		  // This has to be the same size as the maximum width to
-      		  // prevent clipping
-      		  strokeWidth: 4,
-      		  trailWidth: 1,
-      		  easing: 'easeInOut',
-      		  duration: 1400,
-      		  text: {
-      		    autoStyleContainer: false
-      		  },
-      		  from: { color: '#aaa', width: 1 },
-      		  to: { color: '#003B63', width: 4 },
-      		  // Set default step function for all animate calls
-      		  step: function(state, circle) {
-      		    circle.path.setAttribute('stroke', state.color);
-      		    circle.path.setAttribute('stroke-width', state.width);
-
-      		    var value = Math.round(circle.value() * 100);
-      		    if (value === 0) {
-      		      circle.setText('');
-      		    } else {
-      		      circle.setText(value+'%');
-      		    }
-
-      		  }
-      		});
-      		bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-      		bar.text.style.fontSize = '2rem';
-
-      		bar.animate(0.7);  // Number from 0.0 to 1.0
-        	//init();
     	</script>
     	
     </body>

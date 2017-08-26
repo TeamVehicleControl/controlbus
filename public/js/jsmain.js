@@ -184,7 +184,32 @@ function error(){
 }
 
 function ok(){
-    //una notificación correcta
-alertify.success("Se resolvió la falla del: El sistema eléctrico"); 
-return false;
+	alertify.success("Se resolvió la falla del: El sistema eléctrico"); 
+	return false;
 }
+
+var bar = new ProgressBar.Circle('#confiabilidad-container', {
+	color: '#aaa',
+	strokeWidth: 4,
+	trailWidth: 1,
+	easing: 'easeInOut',
+	duration: 1400,
+	text: {
+		autoStyleContainer: false
+	},
+    from: { color: '#aaa', width: 1 },
+    to: { color: '#003B63', width: 4 },
+    step: function(state, circle) {
+	    circle.path.setAttribute('stroke', state.color);
+	    circle.path.setAttribute('stroke-width', state.width);
+	    var value = Math.round(circle.value() * 100);
+	    if (value === 0) {
+	      circle.setText('');
+	    }else{
+	    	circle.setText(value+'%');
+	    }
+    }
+});
+bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontSize = '2rem';
+bar.animate(0.7);
