@@ -18,6 +18,7 @@
         <link type="image/x-icon"   rel="shortcut icon" href="<?php echo RUTA_IMG?>header/car.ico">
         <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-3.3.6/css/bootstrap.min.css?v=<?php echo time();?>">
 		<link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>mdl/css/material.min.css?v=<?php echo time();?>">
+		<link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>alertify/css/alertify.min.css?v=<?php echo time();?>"> 
 		<link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.min.css?v=<?php echo time();?>">
 		<link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>pace/pace_css.css?v=<?php echo time();?>">  
         <link type="text/css"       rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
@@ -44,13 +45,16 @@
     <body>
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     		<header class="mdl-layout__header">
+                <div>
+                    <img class="inline" src="<?php echo RUTA_IMG?>header/logo_vehikmant.jpg" alt="vehikmant">
+                </div>
     			<div class="mdl-layout__header-row">
     			    <div class="mdl-layout-spacer"></div>
     			    <nav class="mdl-navigation">
                         <a class="mdl-button mdl-js-button mdl-button--icon" href=""><i class="mdi mdi-notifications"></i></a>
                         <div class="btn-group">
         					<button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect login dropdown-toggle" data-toggle="dropdown" 	aria-haspopup="true" aria-expanded="false">
-        						<img class="inline" src="public/img/header/nouser.jpg" alt="">
+        						<img class="inline" src="<?php echo RUTA_IMG?>header/nouser.jpg" alt="vehikmant">
         				    	<p class="inline">Julio Sulca</p> 
         				    	<i class="mdi mdi-arrow_drop_down inline"></i>
         					</button>
@@ -65,8 +69,9 @@
     		<div class="mdl-layout__drawer">
     			<span class="mdl-layout-title"><i class="mdi mdi-menu"></i></span>
     			<nav class="mdl-navigation p-t-0">
+                    <a class="mdl-navigation__link active" href=""><i class="mdi mdi-home"></i><p>Inicio</p></a>
     				<a class="mdl-navigation__link"><div class="arrow-right"></div><i class="mdi mdi-priority_high" onclick="abirModalAlertas()"></i><p>Alertas</p></a>
-    				<a class="mdl-navigation__link active" href=""><div class="arrow-right"></div><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>
+    				<a class="mdl-navigation__link" href=""><div class="arrow-right"></div><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>
     				<a class="mdl-navigation__link" href="users.html"><i class="mdi mdi-group_add"></i><p>Proveedores</p></a>
     				<a class="mdl-navigation__link" href=""><i class="mdi mdi-person"></i><p>Clientes</p></a>
     				<a class="mdl-navigation__link" href=""><i class="mdi mdi-event_seat"></i><p>Concesionaria</p></a>
@@ -75,58 +80,103 @@
     			</nav>
     		</div>
     		<main class="mdl-layout__content">
-    		<div class="col-md-6">
-                <div class="col-sm-12" id="graf1">	
-				    <div class="mdl-card m-b-5">
-				        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text" id="idCantidadEvaluar">Fallas seg&uacute;n el tiempo</h2>
+                <section>
+                    <div class="mdl-content-cards ">
+                        <div class="mdl-card mdl-card-nivel-general">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Nivel de Confiabilidad</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                
+                            </div>
                         </div>
-                        <div class="mdl-card__supporting-text br-b">
-                            <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion"><!-- Evaluados a partir del 30-10-2016. --></small>
-                            <div id="chart_div" class="chart_new" style="display:block"></div>
+                        <div class="mdl-card mdl-card-niveles">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Plan de Mantenimiento</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                
+                            </div>
                         </div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-                <div class="col-sm-12" id="graf2">	
-				    <div class="mdl-card m-b-5">
-				        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text" id="idCantidadEvaluar1">Alertas</h2>
+                        <div class="mdl-card mdl-card-niveles">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Inspecciones T&eacute;cnicas</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                
+                            </div>
                         </div>
-                        <div class="mdl-card__supporting-text br-b">
-                            <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion1"><!-- Evaluados a partir del 30-10-2016. --></small>
-                            <div id="chart_div1" class="chart_new" style="display:block"></div>
+                        <div class="mdl-card mdl-card-niveles">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Limpieza Flota</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                
+                            </div>
                         </div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-                <div class="col-sm-12" id="graf2">	
-				    <div class="mdl-card m-b-5">
-				        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text" id="idCantidadEvaluar2">Fallas por zona</h2>
+                        <div class="mdl-card mdl-card-niveles">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Control de Residuos</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                
+                            </div>
                         </div>
-                        <div class="mdl-card__supporting-text br-b">
-                            <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion2"><!-- Evaluados a partir del 30-10-2016. --></small>
-                            <div id="regions_div" class="chart_new" style="display:block"></div>
-                        </div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-                <div class="col-sm-12" id="graf5">	
-				    <div class="mdl-card m-b-5">
-				        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text" id="idCantidadEvaluar5">Calidad por a&ntilde;o</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text br-b">
-                            <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion5"><!-- Evaluados a partir del 30-10-2016. --></small>
-                            <div id="chart_div5" class="chart_new" style="display:block"></div>
-                        </div>
-					</div>
-				</div>
-			</div>
+                    </div>
+                </section>
+                
+        		<div class="col-md-6">
+                    <div class="col-sm-12" id="graf1">	
+    				    <div class="mdl-card m-b-5">
+    				        <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text" id="idCantidadEvaluar">Fallas seg&uacute;n el tiempo</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text br-b">
+                                <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion"><!-- Evaluados a partir del 30-10-2016. --></small>
+                                <div id="chart_div" class="chart_new" style="display:block"></div>
+                            </div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6">
+                    <div class="col-sm-12" id="graf2">	
+    				    <div class="mdl-card m-b-5">
+    				        <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text" id="idCantidadEvaluar1">Alertas</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text br-b">
+                                <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion1"><!-- Evaluados a partir del 30-10-2016. --></small>
+                                <div id="chart_div1" class="chart_new" style="display:block"></div>
+                            </div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6">
+                    <div class="col-sm-12" id="graf2">	
+    				    <div class="mdl-card m-b-5">
+    				        <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text" id="idCantidadEvaluar2">Fallas por zona</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text br-b">
+                                <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion2"><!-- Evaluados a partir del 30-10-2016. --></small>
+                                <div id="regions_div" class="chart_new" style="display:block"></div>
+                            </div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6">
+                    <div class="col-sm-12" id="graf5">	
+    				    <div class="mdl-card m-b-5">
+    				        <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text" id="idCantidadEvaluar5">Calidad por a&ntilde;o</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text br-b">
+                                <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion5"><!-- Evaluados a partir del 30-10-2016. --></small>
+                                <div id="chart_div5" class="chart_new" style="display:block"></div>
+                            </div>
+    					</div>
+    				</div>
+    			</div>
     		</main>
 		</div>
 		
@@ -154,6 +204,7 @@
         <script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_JS?>jquery-1.12.1.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>bootstrap-3.3.6/js/bootstrap.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>mdl/js/material.min.js?v=<?php echo time();?>"></script>
+    	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>alertify/js/alertify.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>toaster/toastr.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" async src="<?php echo RUTA_JS?>jsmain.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_PLUGINS?>pace/pace.min.js?v=<?php echo time();?>"></script>
