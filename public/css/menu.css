@@ -1,5 +1,14 @@
 @CHARSET "ISO-8859-1";
 
+main section {
+	padding: 15px;
+	-webkit-transition: padding .5s linear, padding-right .5s linear;	
+	   -moz-transition: padding .5s linear, padding-right .5s linear;	
+	    -ms-transition: padding .5s linear, padding-right .5s linear;
+	     -o-transition: padding .5s linear, padding-right .5s linear;
+		    transition: padding .5s linear, padding-right .5s linear;	
+}
+
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label, 
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, 
 .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label{
@@ -8,4 +17,48 @@
 
 .mdl-textfield__label:after{
 	background-color: #003B63;
+}
+
+.mdl-content-cards {
+	text-align: left;
+	margin:auto;
+	width: 100%;
+	max-width: 1120px;
+	-webkit-transition: all .3s ease-in-out;
+	   -moz-transition: all .3s ease-in-out;
+	    -ms-transition: all .3s ease-in-out;
+	     -o-transition: all .3s ease-in-out;
+		    transition: all .3s ease-in-out;
+}
+
+.mdl-card-nivel-general{
+	max-width: 350px;
+	margin-top: 0px;	
+	margin-bottom:10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	display: inline-block;	
+	z-index: 1;
+    -webkit-transition: all .3s ease-in-out;
+       -moz-transition: all .3s ease-in-out;
+    	 -o-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;	
+}
+
+.mdl-card-niveles{
+	max-width: 350px;
+	margin-top: 0px;	
+	margin-bottom:10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	display: inline-block;	
+	z-index: 1;
+    -webkit-transition: all .3s ease-in-out;
+       -moz-transition: all .3s ease-in-out;
+    	 -o-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;	
+}
+
+.mdl-card__supporting-text{
+	width: 100%;
 }

@@ -1,3 +1,7 @@
+$(window).load(function() {
+	$("#modalAlertas").modal('show');
+});
+
 function abirModalAlertas() {
 	google.charts.setOnLoadCallback(drawTable1);
 	modal('modalAlertas');
