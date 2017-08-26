@@ -48,7 +48,16 @@ main section {
 	     -o-transition: all .3s ease-in-out;
 		    transition: all .3s ease-in-out;
 }
-
+.mdl-card__menu {
+	right: 5px;
+	top: 10px;
+    text-align: right;
+	width: -webkit-calc(100% - 10px);
+	width: -moz-calc(100% - 10px);
+	width: -ms-calc(100% - 10px);
+	width: -o-calc(100% - 10px);
+	width: calc(100% - 10px);
+}
 .mdl-card-nivel-general{
 	max-width: 350px;
 	margin-top: 0px;	
@@ -62,9 +71,21 @@ main section {
     	 -o-transition: all .3s ease-in-out;
 			transition: all .3s ease-in-out;	
 }
-
 .mdl-card-niveles{
 	max-width: 350px;
+	margin-top: 0px;	
+	margin-bottom:10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	display: inline-block;	
+	z-index: 1;
+    -webkit-transition: all .3s ease-in-out;
+       -moz-transition: all .3s ease-in-out;
+    	 -o-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;	
+}
+.mdl-card-graphics{
+	max-width: 535px;
 	margin-top: 0px;	
 	margin-bottom:10px;
 	margin-right: 10px;

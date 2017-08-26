@@ -123,11 +123,8 @@
                             </div>
                         </div>
                     </div>
-                </section>
-                
-        		<div class="col-md-6">
-                    <div class="col-sm-12" id="graf1">	
-    				    <div class="mdl-card m-b-5">
+                    <div class="mdl-content-cards ">
+                        <div class="mdl-card mdl-card-graphics">
     				        <div class="mdl-card__title">
                                 <h2 class="mdl-card__title-text" id="idCantidadEvaluar">Fallas seg&uacute;n el tiempo</h2>
                             </div>
@@ -135,12 +132,13 @@
                                 <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion"><!-- Evaluados a partir del 30-10-2016. --></small>
                                 <div id="chart_div" class="chart_new" style="display:block"></div>
                             </div>
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-js-button mdl-button--icon">
+                                    <i class="mdi mdi-file_download"></i>
+                                </button>
+                            </div>
     					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6">
-                    <div class="col-sm-12" id="graf2">	
-    				    <div class="mdl-card m-b-5">
+    					<div class="mdl-card mdl-card-graphics">
     				        <div class="mdl-card__title">
                                 <h2 class="mdl-card__title-text" id="idCantidadEvaluar1">Alertas</h2>
                             </div>
@@ -148,12 +146,13 @@
                                 <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion1"><!-- Evaluados a partir del 30-10-2016. --></small>
                                 <div id="chart_div1" class="chart_new" style="display:block"></div>
                             </div>
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-js-button mdl-button--icon">
+                                    <i class="mdi mdi-file_download"></i>
+                                </button>
+                            </div>
     					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6">
-                    <div class="col-sm-12" id="graf2">	
-    				    <div class="mdl-card m-b-5">
+    					<div class="mdl-card mdl-card-graphics">
     				        <div class="mdl-card__title">
                                 <h2 class="mdl-card__title-text" id="idCantidadEvaluar2">Fallas por zona</h2>
                             </div>
@@ -161,12 +160,13 @@
                                 <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion2"><!-- Evaluados a partir del 30-10-2016. --></small>
                                 <div id="regions_div" class="chart_new" style="display:block"></div>
                             </div>
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-js-button mdl-button--icon">
+                                    <i class="mdi mdi-file_download"></i>
+                                </button>
+                            </div>
     					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6">
-                    <div class="col-sm-12" id="graf5">	
-    				    <div class="mdl-card m-b-5">
+    					<div class="mdl-card mdl-card-graphics">
     				        <div class="mdl-card__title">
                                 <h2 class="mdl-card__title-text" id="idCantidadEvaluar5">Calidad por a&ntilde;o</h2>
                             </div>
@@ -174,9 +174,14 @@
                                 <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion5"><!-- Evaluados a partir del 30-10-2016. --></small>
                                 <div id="chart_div5" class="chart_new" style="display:block"></div>
                             </div>
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-js-button mdl-button--icon">
+                                    <i class="mdi mdi-file_download"></i>
+                                </button>
+                            </div>
     					</div>
-    				</div>
-    			</div>
+                    </div>
+                </section>
     		</main>
 		</div>
 		
