@@ -221,70 +221,15 @@
     	<script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>   
     	
     	<script type="text/javascript">
-        	$(document).ready(function() {
-            google.charts.load('current', {'packages':['corechart', 'line', 'bar', 'gauge', 'geochart', 'table'],
-            				   'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'});
+
+    		google.charts.load('current', {'packages':['corechart', 'line', 'bar', 'gauge', 'geochart', 'table'],
+			   				   'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'});
+		
+			$(document).ready(function() {
             google.charts.setOnLoadCallback(drawChart);
             google.charts.setOnLoadCallback(drawTrendlines);
             google.charts.setOnLoadCallback(drawRegionsMap);
             google.charts.setOnLoadCallback(drawChartZone);
-
-
-            function drawRegionsMap() {
-            	var data = google.visualization.arrayToDataTable([
-                    ['City',   'Cant. Fallas', 'costo'],
-                    ['Lima',       847,    5.672],
-                    ['Arequipa',   784,     2.923],
-                    ['Cusco',      348,     3.851],
-                    ['Trujillo',   682,     2.217],
-                    ['Piura',      377,     1.892]
-                  ]);
-
-                  var options = {
-                    region: 'PE',
-                    displayMode: 'markers',
-                    colorAxis: {colors: ['#8BC34A', '#FFEB3B']}
-                  };
-
-              var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-              chart.draw(data, options);
-            }
-            
-            function drawChart() {
-           	        var data = google.visualization.arrayToDataTable([
-           	          ['Label', 'Value'],
-           	          ['Plan Mantto', 80],
-           	          ['Inspec. T\u00E9c.', 55],
-           	          ['Limpieza', 68],
-              	      ['Residuos', 20]
-           	        ]);
-
-           	        var options = {
-           	          width: 500, height: 200,
-           	          redFrom: 90, redTo: 100,
-           	          yellowFrom:75, yellowTo: 90,
-           	          minorTicks: 5
-           	        };
-
-           	        var chart = new google.visualization.Gauge(document.getElementById('chart_div1'));
-
-           	        chart.draw(data, options);
-
-           	        setInterval(function() {
-           	          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-           	          chart.draw(data, options);
-           	        }, 13000);
-           	        setInterval(function() {
-           	          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-           	          chart.draw(data, options);
-           	        }, 5000);
-           	        setInterval(function() {
-           	          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-           	          chart.draw(data, options);
-           	        }, 26000);
-           	}
-
 
 
             function drawTrendlines() {
@@ -345,6 +290,13 @@
                 chart.draw(data, options);
               }
             });
+    	   var video = document.getElementById('video');
+            video.addEventListener('click',function(){
+              video.play();
+            },false);
+            
+
+        	//init();
     	</script>
     	
     </body>
