@@ -124,17 +124,17 @@
 						console.log('entra');
     					var data = new google.visualization.DataTable();
         			    data.addColumn('string', 'Alerta');
-        			    data.addColumn('number', 'Costo');
         			    data.addColumn('string', 'Unidad');
         			    data.addColumn('string', 'Distrito');
         			    data.addColumn('string', 'Detalle');
+        			    data.addColumn('number', 'Costo');
         			    data.addColumn('boolean', 'Solucionadas');
         			    data.addRows([
-        			      ['Motor',  {v: 10000, f: '$10,000'}, 'AFK-25A', 'Comas', 'Se recalento el motor y empezo a fallar' , true],
-        			      ['Gasolina',   {v: 8000,  f: '$8,000'}, 'AFK-25A' , 'San miguel', 'No mide bien la gasolina', true],
-        			      ['Bujia', {v: 12500, f: '$12,500'}, 'AFK-25A', 'San miguel', 'Se quemo y malogro el sistema electrico' ,true],
-        			      ['Carburador',   {v: 7000,  f: '$7,000'}, 'AFK-25A', 'Recalienta mucho' ,true],
-        			      ['Sistema eléctrico',   {v: 3500,  f: '$3,500'}, 'AFK-25A', 'Lima','Se quemo un clable se apago el carro' ,false],
+        			      ['Motor', 'AMK-253', 'Comas', 'Se recalento el motor y empezo a fallar', {v: 10000, f: '$10,000'} , false],
+        			      ['Gasolina', 'AFK-25A' , 'San miguel', 'No mide bien la gasolina', {v: 10000, f: '$10,000'} , false],
+        			      ['Bujia', 'BWG-A31', 'San miguel', 'Se quemo y malogro el sistema electrico', {v: 10000, f: '$10,000'} ,false],
+        			      ['Carburador', 'OGM-302','Comas', 'Recalienta mucho', {v: 10000, f: '$10,000'} ,false],
+        			      ['Sistema electrico','AFK-25A', 'Lima','Se quemo un clable se apago el carro', {v: 10000, f: '$10,000'} ,false],
         			    ]);
 
         		    var table = new google.visualization.Table(document.getElementById('chart_div7'));
