@@ -80,7 +80,7 @@
     			</nav>
     		</div>
     		<main class="mdl-layout__content">
-                <section>   
+                <section>
                     <div class="mdl-content-cards">
                         <div class="mdl-card">
     				        <div class="mdl-card__title">
@@ -91,6 +91,9 @@
                                 <div id="chart_div7" class="chart_new" style="display:block"></div>
                             </div>
                             <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-js-button mdl-button--icon">
+                                    <i class="mdi mdi-refresh"></i>
+                                </button>
                                 <button class="mdl-button mdl-js-button mdl-button--icon">
                                     <i class="mdi mdi-file_download"></i>
                                 </button>
@@ -123,7 +126,6 @@
     		$(document).ready(function() {
     			google.charts.setOnLoadCallback(drawTable1);
     			function drawTable1() {
-						console.log('entra');
     					var data = new google.visualization.DataTable();
         			    data.addColumn('string', 'Alerta');
         			    data.addColumn('string', 'Unidad');
