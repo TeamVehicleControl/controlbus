@@ -51,7 +51,7 @@
     			<div class="mdl-layout__header-row">
     			    <div class="mdl-layout-spacer"></div>
     			    <nav class="mdl-navigation">
-                        <a id="alertas" class="mdl-button mdl-js-button mdl-button--icon" href="" style="overflow:visible"><i class="mdi mdi-notifications" data-badge="1"></i></a>
+                        <a class="mdl-button mdl-js-button mdl-button--icon" href=""><i class="mdi mdi-notifications"></i></a>
                         <div class="btn-group">
         					<button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect login dropdown-toggle" data-toggle="dropdown" 	aria-haspopup="true" aria-expanded="false">
         						<img class="inline" src="<?php echo RUTA_IMG?>header/nouser.jpg" alt="vehikmant">
@@ -70,8 +70,8 @@
     			<span class="mdl-layout-title"><i class="mdi mdi-menu"></i></span>
     			<nav class="mdl-navigation p-t-0">
                     <a class="mdl-navigation__link active" href=""><i class="mdi mdi-home"></i><p>Inicio</p></a>
-    				<a class="mdl-navigation__link"><div class="arrow-right"></div><i class="mdi mdi-priority_high" onclick="abirModalAlertas()"></i><p>Alertas</p></a>
-    				<a class="mdl-navigation__link" href=""><div class="arrow-right"></div><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>
+    				<a id="alertas" class="mdl-navigation__link"><div class="arrow-right"></div><i class="mdi mdi-priority_high" data-badge="1" onclick="abirModalAlertas()"></i><p>Alertas</p></a>
+    				<a class="mdl-navigation__link" href=""><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>
     				<a class="mdl-navigation__link" href="users.html"><i class="mdi mdi-group_add"></i><p>Proveedores</p></a>
     				<a class="mdl-navigation__link" href=""><i class="mdi mdi-person"></i><p>Clientes</p></a>
     				<a class="mdl-navigation__link" href=""><i class="mdi mdi-event_seat"></i><p>Concesionaria</p></a>
