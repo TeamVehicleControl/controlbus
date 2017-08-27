@@ -231,7 +231,7 @@
     					<div class="mdl-card__supporting-text">
                             <div id="chart_divDetaMap" class="chart_new" style="display:block"></div>
     					</div>
-    					<div class="mdl-card__actions p-t-20">
+    					<div class="mdl-card__actions">
                             <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div>

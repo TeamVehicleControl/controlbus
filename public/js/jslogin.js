@@ -81,5 +81,12 @@ function login() {
 }
 
 function redirectConcesionaria(){
-	window.location.href = "http://localhost:8080/controlbus/";
+	window.location.href = "http://localhost:8080/controlbus/c_concesionaria";
 }
+function redirectUsuario(){
+	window.location.href = "http://localhost:8080/controlbus/c_usuario";
+}
+function redirectAnexo(){
+	window.location.href = "http://localhost:8080/controlbus/c_anexo";
+}
+

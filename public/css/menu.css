@@ -108,6 +108,10 @@ main section {
 .mdl-card__supporting-text{
 	width: 100%;
 }
+.mdl-card__actions{
+	padding: 16px;
+	text-align: right;
+}
 
 #mantenimiento-container,
 #inspecciones-container,
