@@ -121,3 +121,7 @@ main section {
     height: 6px;
     position: relative;
 }
+
+.mdl-badge[data-badge]:after{
+	background-color: #003B63;
+}
