@@ -80,21 +80,23 @@
     			</nav>
     		</div>
     		<main class="mdl-layout__content">
-                <section>
-                    <div class="mdl-card mdl-card-graphics">
-				        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text" id="idCantidadEvaluar1">Detalle de Alertas de falla</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text br-b">
-                            <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion1">
-                            <div id="chart_div7" class="chart_new" style="display:block"></div>
-                        </div>
-                        <div class="mdl-card__menu">
-                            <button class="mdl-button mdl-js-button mdl-button--icon">
-                                <i class="mdi mdi-file_download"></i>
-                            </button>
-                        </div>
-					</div>
+                <section>   
+                    <div class="mdl-content-cards">
+                        <div class="mdl-card">
+    				        <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text" id="idCantidadEvaluar1">Detalle de Alertas de falla</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text br-b">
+                                <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion1">
+                                <div id="chart_div7" class="chart_new" style="display:block"></div>
+                            </div>
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-js-button mdl-button--icon">
+                                    <i class="mdi mdi-file_download"></i>
+                                </button>
+                            </div>
+    					</div>
+                    </div>
                 </section>
     		</main>
 		</div>
