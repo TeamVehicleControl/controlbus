@@ -159,6 +159,7 @@ var time = 1
 function cerrarAlertas() {
 	if(cont <= 5) {
 		setTimeout(function(){
+			$("#alertas").find('i').addClass('mdl-badge mdl-badge--overlap');
 			error();
 			time = 2;
 			cont = cont+1;
