@@ -59,4 +59,16 @@ class C_main extends CI_Controller {
 	    }
 	    echo json_encode(array_map('utf8_encode', $data));
 	}
+	
+	function gotoAlertas() {
+	    $data['error'] = EXIT_ERROR;
+	    try{
+	        $data['urlAlertas'] = 'http://localhost:8080/controlbus/c_alertas';
+	        _log(print_r($data['urlAlertas'], true));
+	        $data['error'] = EXIT_SUCCESS;
+	    }  catch(Exception $e){
+	        $data['msj'] = $e->getMessage();
+	    }
+	    echo json_encode(array_map('utf8_encode', $data));
+	}
 }

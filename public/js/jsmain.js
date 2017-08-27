@@ -327,5 +327,21 @@ var bar = new ProgressBar.Line('#residuos-container', {
 bar.animate(0.6);
 
 function gotoAlertas() {
-	
+	console.log('entra');
+	$.ajax({
+		url   : 'C_main/gotoAlertas',
+		type  : 'POST'
+	}).done(function(data){
+		try{
+			data = JSON.parse(data);
+			if(data.error == 0){
+				location.href = data.urlAlertas;
+				console.log(data.urlAlertas);
+			}else {
+				return;
+			}
+		} catch (err){
+			msj('error',err.message);
+		}
+	});
 }
