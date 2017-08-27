@@ -37,7 +37,7 @@
     				<source src="<?php echo RUTA_IMG?>video/video_car.webm" type="video/webm">
     			</video>
                 <div class="col-sm-12 text-center">
-                    <h1>VehicMant</h1>
+                    <h1>VehikMant</h1>
                 </div>
                 <div class="col-sm-12" id="loginForm">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="cont_usuario">
