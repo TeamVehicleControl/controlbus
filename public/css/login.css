@@ -42,7 +42,7 @@ margin: 20px 0;
 #main video{
     position: absolute;
     top: -72px;
-    right: -240px;
+    right: -250px;
     height: 131%;
     z-index: -1;
     width: 825px;
