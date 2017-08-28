@@ -235,8 +235,8 @@ var bar = new ProgressBar.Line('#mantenimiento-container', {
 	  },
 	  autoStyleContainer: false
 	},
-	from: {color: '#FFEA82'},
-	to: {color: '#003B63'},
+	from: {color: '#F44336'},
+	to: {color: '#4CAF50'},
 	step: (state, bar) => {
 		bar.setText(Math.round(bar.value() * 100) + ' %');
 	}
@@ -263,8 +263,8 @@ var bar = new ProgressBar.Line('#inspecciones-container', {
 	  },
 	  autoStyleContainer: false
 	},
-	from: {color: '#FFEA82'},
-	to: {color: '#003B63'},
+	from: {color: '#F44336'},
+	to: {color: '#4CAF50'},
 	step: (state, bar) => {
 		bar.setText(Math.round(bar.value() * 100) + ' %');
 	}
@@ -291,8 +291,8 @@ var bar = new ProgressBar.Line('#limpieza-container', {
 	  },
 	  autoStyleContainer: false
 	},
-	from: {color: '#FFEA82'},
-	to: {color: '#003B63'},
+	from: {color: '#F44336'},
+	to: {color: '#4CAF50'},
 	step: (state, bar) => {
 		bar.setText(Math.round(bar.value() * 100) + ' %');
 	}
@@ -319,8 +319,8 @@ var bar = new ProgressBar.Line('#residuos-container', {
 	  },
 	  autoStyleContainer: false
 	},
-	from: {color: '#FFEA82'},
-	to: {color: '#003B63'},
+	from: {color: '#F44336'},
+	to: {color: '#4CAF50'},
 	step: (state, bar) => {
 		bar.setText(Math.round(bar.value() * 100) + ' %');
 	}
