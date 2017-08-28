@@ -198,8 +198,8 @@ var bar = new ProgressBar.Circle('#confiabilidad-container', {
 	text: {
 		autoStyleContainer: false
 	},
-    from: { color: '#aaa', width: 1 },
-    to: { color: '#003B63', width: 4 },
+    from: { color: '#F44336', width: 1 },
+    to: { color: '#4CAF50', width: 4 },
     step: function(state, circle) {
 	    circle.path.setAttribute('stroke', state.color);
 	    circle.path.setAttribute('stroke-width', state.width);
@@ -213,7 +213,7 @@ var bar = new ProgressBar.Circle('#confiabilidad-container', {
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
-bar.animate(0.5);
+bar.animate(0.9);
 
 var bar = new ProgressBar.Line('#mantenimiento-container', {
 	strokeWidth: 4,
