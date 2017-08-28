@@ -198,7 +198,7 @@ var bar = new ProgressBar.Circle('#confiabilidad-container', {
 	text: {
 		autoStyleContainer: false
 	},
-    from: { color: '#F44336', width: 1 },
+    from: { color: '#F44336', width: 2 },
     to: { color: '#4CAF50', width: 4 },
     step: function(state, circle) {
 	    circle.path.setAttribute('stroke', state.color);
