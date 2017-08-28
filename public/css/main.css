@@ -77,3 +77,9 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+@media ( max-width : 1024px ) {
+	.mdl-layout--fixed-drawer>.mdl-layout__content{
+		margin-left: 0;
+	}
+}
