@@ -12,7 +12,8 @@ class C_main extends CI_Controller {
         $this->output->set_header('Cache-Control: post-check=0, pre-check=0',false);
         $this->output->set_header('Pragma: no-cache');
         if (! isset($_COOKIE[__getCookieName()])) {
-            redirect(RUTA_VEHIKMANT, 'refresh');
+            header("Location: ".RUTA_VEHIKMANT, true, 301);
+            //redirect(RUTA_VEHIKMANT, 'location');
         }
     }
     
@@ -20,7 +21,7 @@ class C_main extends CI_Controller {
 	{
 	    $data['nombre_completo'] = _getSesion("nombre_completo");
 	    if(_getSesion("usuario") == null && _getSesion("password") == null) {
-	        $data['url'] = 'http://localhost:8080/controlbus';
+	        header("Location: ".RUTA_VEHIKMANT, true, 301);
 	    }
 		$this->load->view('v_main', $data);
 	}
