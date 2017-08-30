@@ -37,17 +37,17 @@
         <section>
             <div class="header-main"></div>
             <div id="main">
-                <div class="mdl-card mdl-card-type" onclick="redirectConcesionaria();">
+                <div class="mdl-card mdl-card-type" onclick="redirectConcesionaria(1);">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text"><i class="mdi mdi-group"></i>Concesionaria</h2>
                     </div>
                 </div>
-                <div class="mdl-card mdl-card-type" onclick="redirectUsuario();">
+                <div class="mdl-card mdl-card-type" onclick="redirectUsuario(2);">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text"><i class="mdi mdi-person"></i>Usuario</h2>
                     </div>
                 </div>
-                <div class="mdl-card mdl-card-type" onclick="redirectAnexo();">
+                <div class="mdl-card mdl-card-type" onclick="redirectAnexo(3);">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text"><i class="mdi mdi-account_box"></i>Anexo</h2>
                     </div>

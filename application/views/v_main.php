@@ -69,7 +69,7 @@
     		<div class="mdl-layout__drawer">
     			<span class="mdl-layout-title"><i class="mdi mdi-menu"></i></span>
     			<nav class="mdl-navigation p-t-0">
-    				<?php if($rol == 'Concecionaria'){?>
+    				<?php if($rol == 'Concesionaria'){?>
         				<a class="mdl-navigation__link active" href=""><i class="mdi mdi-home"></i><p>Inicio</p></a>
         				<a id="alertas" class="mdl-navigation__link"><div class="arrow-right"></div><i class="mdi mdi-priority_high" data-badge="1" onclick="abirModalAlertas()"></i><p>Alertas</p></a>
         				<a class="mdl-navigation__link" href=""><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>

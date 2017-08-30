@@ -71,7 +71,7 @@ class C_login extends CI_Controller {
     	        }else if($user == 'jsulca' && $password == '123') {
     	            $nombre     = 'Julio Sullca';
     	            $nombreComp = 'Julio C. Sullca';
-    	            $rol        = 'Concecionaria';
+    	            $rol        = 'Concesionaria';
     	        }
     	        $this->session->set_userdata(array('usuario'           => 'jhiberico',//PARA EL MANEJO DE DATOS
     	                                           'password'          => _encodeCI('123'),

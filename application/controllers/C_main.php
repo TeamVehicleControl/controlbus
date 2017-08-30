@@ -19,8 +19,11 @@ class C_main extends CI_Controller {
     
 	public function index()
 	{
-	    $data['nombre_completo'] = _getSesion("nombre_completo");
+	    $data['nombre_completo'] = _getSesion("nombre_abvr");
 	    if(_getSesion("usuario") == null && _getSesion("password") == null) {
+	        header("Location: ".RUTA_VEHIKMANT, true, 301);
+	    }
+	    if(_getSesion("direccion") != _getSesion("roles")) {
 	        header("Location: ".RUTA_VEHIKMANT, true, 301);
 	    }
 	    $data['rol'] = _getSesion("roles");
