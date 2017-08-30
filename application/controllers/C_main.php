@@ -23,6 +23,7 @@ class C_main extends CI_Controller {
 	    if(_getSesion("usuario") == null && _getSesion("password") == null) {
 	        header("Location: ".RUTA_VEHIKMANT, true, 301);
 	    }
+	    $data['rol'] = _getSesion("roles");
 		$this->load->view('v_main', $data);
 	}
 	

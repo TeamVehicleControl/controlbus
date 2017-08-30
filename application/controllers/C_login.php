@@ -46,6 +46,7 @@ class C_login extends CI_Controller {
     	    $check       = null;
     	    $nombre      = null;
     	    $nombreComp  = null;
+    	    $rol         = null;
     	    ($remember == '0' ? $check = '0' : $check = '1');
     	    if($user == null && $password == null) {
     	        $data['error'] = '<p style="font-size: 12px;color:#f44336;margin-right:-8px">
@@ -60,21 +61,24 @@ class C_login extends CI_Controller {
     	    } else if($user == 'jhiberico' && $password == '123' || $user == 'jminaya' && $password == '123' || $user == 'jsulca' && $password == '123'){
     	       //$ingreso = $this->M_usuario->getIngreso((trim($user)), $password);
     	        if($user == 'jhiberico' && $password == '123') {
-    	            $nombre = 'Jhonatan Iberico';
+    	            $nombre     = 'Jhonatan Iberico';
+    	            $rol        = 'Anexo';
     	            $nombreComp = 'Jhonatan Iberico Mesia';
     	        }else if($user == 'jminaya' && $password == '123') {
-    	            $nombre = 'José Minaya';
+    	            $nombre     = 'José Minaya';
     	            $nombreComp = 'Jose L. Minaya C.';
+    	            $rol        = 'Usuario';
     	        }else if($user == 'jsulca' && $password == '123') {
-    	            $nombre = 'Julio Sullca';
+    	            $nombre     = 'Julio Sullca';
     	            $nombreComp = 'Julio C. Sullca';
+    	            $rol        = 'Concecionaria';
     	        }
     	        $this->session->set_userdata(array('usuario'           => 'jhiberico',//PARA EL MANEJO DE DATOS
     	                                           'password'          => _encodeCI('123'),
     	                                           'nombre_abvr'       => $nombre,
     	                                           'nombre_completo'   => $nombreComp,
     	                            	           'flg_clave'         => 1,
-    	                            	           'roles'             => 'Administrador'));
+    	                                           'roles'             => $rol));
     	        //_log($ingreso);
     	        $data['url'] = 'http://localhost:8080/controlbus/C_main';
     	        $data['remember'] = $check;
