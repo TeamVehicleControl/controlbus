@@ -92,6 +92,8 @@ defined('RUTA_IMG')     OR define('RUTA_IMG'    , 'http://'.(isset($_SERVER['HTT
 defined('RUTA_JS')      OR define('RUTA_JS'     , 'http://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null).'/controlbus/public/js/');
 defined('RUTA_PLUGINS') OR define('RUTA_PLUGINS', 'http://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null).'/controlbus/public/plugins/');
 defined('CHARSET_ISO_8859_1') OR define('CHARSET_ISO_8859_1', 'Content-Type: text/html; charset=ISO-8859-1');
+defined('PROYECTO_NAME')      OR define('PROYECTO_NAME','controlbus');
+defined('RUTA_VEHIKMANT') OR define('RUTA_VEHIKMANT', 'http://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null).'/'.PROYECTO_NAME.'/');
 
 //VIDEO
 defined('RUTA_VIDEO')   OR define('RUTA_VIDEO'  , 'http://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null).'/controlbus/public/video/');

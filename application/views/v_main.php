@@ -55,7 +55,7 @@
                         <div class="btn-group">
         					<button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect login dropdown-toggle" data-toggle="dropdown" 	aria-haspopup="true" aria-expanded="false">
         						<img class="inline" src="<?php echo RUTA_IMG?>header/nouser.jpg" alt="vehikmant">
-        				    	<p class="inline">Julio Sulca</p> 
+        				    	<p class="inline"><?php echo $nombre_completo?></p> 
         				    	<i class="mdi mdi-arrow_drop_down inline"></i>
         					</button>
         					<ul class="dropdown-menu">

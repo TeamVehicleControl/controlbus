@@ -181,3 +181,15 @@ if(!function_exists('_logLastQuery')) {
          return $CI->session->unset_userdata($sessionKey);
      }
  }
+ 
+ if(!function_exists('__getCookieName')) {
+     /**
+      * Obtener el nombre del cookie del proyecto
+      * @return Nombre del cookie del proyecto
+      */
+     
+     function __getCookieName() {
+         $CI =& get_instance();
+         return $CI->config->item('sess_cookie_name');
+     }
+ }

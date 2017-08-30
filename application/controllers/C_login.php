@@ -10,7 +10,7 @@ class C_login extends CI_Controller {
          $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate');
          $this->output->set_header('Cache-Control: post-check=0, pre-check=0',false);
          $this->output->set_header('Pragma: no-cache');
-         $this->load->model('mf_usuario/M_usuario');
+         $this->load->model('mf_usuario/m_usuario');
          $this->load->helper('cookie');
      }
     
@@ -19,7 +19,7 @@ class C_login extends CI_Controller {
 	    $cookie_name  = "user";
 	    $cookie_name1 = "pass";
 	    $cookie_name2 = "check";
-	    //$logeoUsario = _getSesion('usuario');
+	    $logeoUsario = _getSesion('usuario');
 	    $logeoUsario = null;
 	    if($logeoUsario == null) {
     	    if(isset($_COOKIE[$cookie_name2])) {
@@ -44,6 +44,8 @@ class C_login extends CI_Controller {
 	        $password    = json_decode(__getTextValue('pass'));
 	        $remember    = json_decode(_post('check'));
     	    $check       = null;
+    	    $nombre      = null;
+    	    $nombreComp  = null;
     	    ($remember == '0' ? $check = '0' : $check = '1');
     	    if($user == null && $password == null) {
     	        $data['error'] = '<p style="font-size: 12px;color:#f44336;margin-right:-8px">
@@ -57,13 +59,23 @@ class C_login extends CI_Controller {
     	        $data['sw'] = 2;
     	    } else if($user == 'jhiberico' && $password == '123' || $user == 'jminaya' && $password == '123' || $user == 'jsulca' && $password == '123'){
     	       //$ingreso = $this->M_usuario->getIngreso((trim($user)), $password);
-    	       $dataUser = array("usuario"           => 'jhiberico',//PARA EL MANEJO DE DATOS
-                    	         "nombre_abvr"       => 'Jhonatan Iberico',
-                    	         "nombre_completo"   => 'Jhonatan Iberico Mesia',
-                    	         'flg_clave'         => 1,
-                    	         "roles"             => 'Administrador');
+    	        if($user == 'jhiberico' && $password == '123') {
+    	            $nombre = 'Jhonatan Iberico';
+    	            $nombreComp = 'Jhonatan Iberico Mesia';
+    	        }else if($user == 'jminaya' && $password == '123') {
+    	            $nombre = 'José Minaya';
+    	            $nombreComp = 'Jose L. Minaya C.';
+    	        }else if($user == 'jsulca' && $password == '123') {
+    	            $nombre = 'Julio Sullca';
+    	            $nombreComp = 'Julio C. Sullca';
+    	        }
+    	        $this->session->set_userdata(array('usuario'           => 'jhiberico',//PARA EL MANEJO DE DATOS
+    	                                           'password'          => _encodeCI('123'),
+    	                                           'nombre_abvr'       => $nombre,
+    	                                           'nombre_completo'   => $nombreComp,
+    	                            	           'flg_clave'         => 1,
+    	                            	           'roles'             => 'Administrador'));
     	        //_log($ingreso);
-    	        //$this->session->set_userdata($dataUser);
     	        $data['url'] = 'http://localhost:8080/controlbus/C_main';
     	        $data['remember'] = $check;
     	        $data['error'] = EXIT_SUCCESS;
