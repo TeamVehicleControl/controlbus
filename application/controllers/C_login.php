@@ -80,7 +80,7 @@ class C_login extends CI_Controller {
     	                            	           'flg_clave'         => 1,
     	                                           'roles'             => $rol));
     	        //_log($ingreso);
-    	        $data['url'] = 'http://localhost:8080/controlbus/C_main';
+    	        $data['url'] = RUTA_VEHIKMANT.'C_main';
     	        $data['remember'] = $check;
     	        $data['error'] = EXIT_SUCCESS;
     	    }else if($user != 'jhiberico' && $password != '123' || $user != 'jminaya' && $password != '123' || $user != 'jsulca' && $password != '123') {
