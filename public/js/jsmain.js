@@ -261,7 +261,8 @@ bar.text.style.fontSize = '2rem';
 bar.animate(0.9);
 
 $( "#confiabilidad-container" ).click(function() {
-	modal('modalDetalleMapa');
+	$('#tituloDetalleMapa').html('Nivel de confiabilidad de la empresa');
+	abrirModalDetalleCircle();
 });
 
 var bar = new ProgressBar.Line('#mantenimiento-container', {
@@ -293,7 +294,8 @@ var bar = new ProgressBar.Line('#mantenimiento-container', {
 bar.animate(0.3);
 
 $( "#mantenimiento-container" ).click(function() {
-	modal('modalDetalleMapa');
+	$('#tituloDetalleMapa').html('Plan de mantenimiento');
+	abrirModalDetalleCircle();
 });
 
 var bar = new ProgressBar.Line('#inspecciones-container', {
@@ -324,7 +326,8 @@ var bar = new ProgressBar.Line('#inspecciones-container', {
 });
 bar.animate(0.5);
 $( "#inspecciones-container" ).click(function() {
-	modal('modalDetalleMapa');
+	$('#tituloDetalleMapa').html('Inspecciones T&eacute;cnicas');
+	abrirModalDetalleCircle();
 });
 
 var bar = new ProgressBar.Line('#limpieza-container', {
@@ -355,7 +358,8 @@ var bar = new ProgressBar.Line('#limpieza-container', {
 });
 bar.animate(0.4);
 $( "#limpieza-container" ).click(function() {
-	modal('modalDetalleMapa');
+	$('#tituloDetalleMapa').html('Limpieza de flota');
+	abrirModalDetalleCircle();
 });
 
 var bar = new ProgressBar.Line('#residuos-container', {
@@ -386,7 +390,8 @@ var bar = new ProgressBar.Line('#residuos-container', {
 });
 bar.animate(0.6);
 $( "#residuos-container" ).click(function() {
-	modal('modalDetalleMapa');
+	$('#tituloDetalleMapa').html('Control de Residuos');
+	abrirModalDetalleCircle();
 });
 
 function gotoAlertas() {
@@ -407,4 +412,22 @@ function gotoAlertas() {
 			msj('error',err.message);
 		}
 	});
+}
+
+function abrirModalDetalleCircle() {
+	var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Alerta');
+    data.addColumn('string', 'Detalle');
+    data.addColumn('number', 'Costo');
+    data.addRows([
+      ['Motor',  'Se recalento el motor y empezo a fallar', {v: 350, f: '$350'}],
+      ['Gasolina',   'No mide bien la gasolina', {v: 20, f: '$20'}],
+      ['Bujia', 'Se quemo y malogro el sistema electrico', {v: 200, f: '$200'}],
+      ['Carburador',   'Recalienta mucho', {v: 80, f: '$80'}],
+      ['Sistema electrico',   'Se quemo un clable se apago el carro', {v: 20, f: '$20'}],
+    ]);
+var table = new google.visualization.Table(document.getElementById('chart_divDetaMap'));
+
+table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+modal('modalDetalleMapa');
 }

@@ -71,7 +71,7 @@
     			<nav class="mdl-navigation p-t-0">
     				<?php if($rol == 'Concesionaria'){?>
         				<a class="mdl-navigation__link active" href="http://localhost:8080/controlbus/C_main"><i class="mdi mdi-home"></i><p>Inicio</p></a>
-        				<a id="alertas" class="mdl-navigation__link"><div class="arrow-right"></div><i class="mdi mdi-priority_high" data-badge="1" onclick="abirModalAlertas()"></i><p>Alertas</p></a>
+        				<a id="alertas" class="mdl-navigation__link"><div class="arrow-right"></div><i class="mdi mdi-priority_high" data-badge="1+" onclick="abirModalAlertas()"></i><p>Alertas</p></a>
         				<a class="mdl-navigation__link" href=""><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>
         				<a class="mdl-navigation__link" href="users.html"><i class="mdi mdi-group_add"></i><p>Proveedores</p></a>
         				<a class="mdl-navigation__link" href=""><i class="mdi mdi-person"></i><p>Clientes</p></a>
@@ -241,7 +241,7 @@
             <div class="modal-dialog modal-md">
                 <div class="modal-content">                
                     <div class="mdl-card">
-					    <div class="mdl-card__title">Detalle de fallas por zona</div>
+					    <div class="mdl-card__title" id="tituloDetalleMapa">Detalle de fallas por zona</div>
     					<div class="mdl-card__supporting-text">
                             <div id="chart_divDetaMap" class="chart_new" style="display:block"></div>
     					</div>

@@ -79,7 +79,6 @@ class C_login extends CI_Controller {
     	                                           'nombre_completo'   => $nombreComp,
     	                            	           'flg_clave'         => 1,
     	                                           'roles'             => $rol));
-    	        //_log($ingreso);
     	        $data['url'] = RUTA_VEHIKMANT.'C_main';
     	        $data['remember'] = $check;
     	        $data['error'] = EXIT_SUCCESS;
