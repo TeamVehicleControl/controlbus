@@ -12,33 +12,78 @@ function abirModalAlertas() {
 function drawTable1() {
 	if(time == 1) {
 		var data = new google.visualization.DataTable();
+	    data.addColumn('string', 'Marca');
 	    data.addColumn('string', 'Alerta');
 	    data.addColumn('number', 'Costo');
 	    data.addColumn('boolean', 'Solucionadas');
 		data.addRows([
-		      ['Motor',  {v: 10000, f: '$10,000'}, true],
-		      ['Gasolina',   {v: 8000,  f: '$8,000'},  true],
-		      ['Bujia', {v: 12500, f: '$12,500'}, true],
-		      ['Carburador',   {v: 7000,  f: '$7,000'},  true],
+		      ['Mercedes Bens','Motor',  {v: 10000, f: '$10,000'}, true],
+		      ['Volvo','Gasolina',   {v: 8000,  f: '$8,000'},  true],
+		      ['Kia','Bujia', {v: 12500, f: '$12,500'}, true],
+		      ['Susuki','Carburador',   {v: 7000,  f: '$7,000'},  true],
 		    ]);
 	}else if(time == 2) {
 		var data = new google.visualization.DataTable();
-	    data.addColumn('string', 'Alerta');
+		data.addColumn('string', 'Marca');
+		data.addColumn('string', 'Alerta');
 	    data.addColumn('number', 'Costo');
 	    data.addColumn('boolean', 'Solucionadas');
 	    data.addRows([
-	      ['Motor',  {v: 10000, f: '$10,000'}, true],
-	      ['Gasolina',   {v: 8000,  f: '$8,000'},  true],
+	      ['Mercedes Bens', 'Motor',  {v: 10000, f: '$10,000'}, true],
+	      ['Volvo','Gasolina','Gasolina',   {v: 8000,  f: '$8,000'},  true],
 	      ['Bujia', {v: 12500, f: '$12,500'}, true],
-	      ['Carburador',   {v: 7000,  f: '$7,000'},  true],
-	      ['Sistema eléctrico',   {v: 3500,  f: '$3,500'},  false],
+	      ['Kia','Carburador',   {v: 7000,  f: '$7,000'},  true],
+	      ['Susuki','Sistema eléctrico',   {v: 3500,  f: '$3,500'},  false],
 	    ]);
 	}
 
     var table = new google.visualization.Table(document.getElementById('chart_div7'));
 
     table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+    
+    google.visualization.events.addListener(table, 'select', selectHandler);
+    
+    function selectHandler(e) {
+    	var selection = table.getSelection();  
+    	var message = '';
+    	  for (var i = 0; i < selection.length; i++) {
+    	    var item = selection[i];
+    	    if (item.row != null && item.column != null) {
+    	      var str = data.getFormattedValue(item.row, item.column);
+//    	      message += '{row:' + item.row + ',column:' + item.column + '} = ' + str + '\n';
+    	    } else if (item.row != null) {
+    	      var str = data.getFormattedValue(item.row, 0);
+//    	      message += '{row:' + item.row + ', column:none}; value (col 0) = ' + str + '\n';
+    	    } else if (item.column != null) {
+    	      var str = data.getFormattedValue(0, item.column);
+//    	      message += '{row:none, column:' + item.column + '}; value (row 0) = ' + str + '\n';
+    	    }
+    	    verMapa(str, item.row);
+//    	    console.log(str);
+//    	    console.log(item.row);
+    	  }
+    	}
   }
+
+function verMapa(empresa, fila) {
+	//location.href = "http://localhost:8080/controlbus/c_ubicacion";
+	$.ajax({
+		url   : 'C_main/verMapa',
+		type  : 'POST',
+		data  : {empresa : empresa}
+	}).done(function(data){
+		try{
+			data = JSON.parse(data);
+			if(data.error == 0){
+				location.href = data.ubicacion;
+			}else {
+				return;
+			}
+		} catch (err){
+			msj('error',err.message);
+		}
+	});
+}
 
 function logout() {
 	$.ajax({
@@ -215,6 +260,10 @@ bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
 bar.animate(0.9);
 
+$( "#confiabilidad-container" ).click(function() {
+	modal('modalDetalleMapa');
+});
+
 var bar = new ProgressBar.Line('#mantenimiento-container', {
 	strokeWidth: 4,
 	easing: 'easeInOut',
@@ -243,6 +292,10 @@ var bar = new ProgressBar.Line('#mantenimiento-container', {
 });
 bar.animate(0.3);
 
+$( "#mantenimiento-container" ).click(function() {
+	modal('modalDetalleMapa');
+});
+
 var bar = new ProgressBar.Line('#inspecciones-container', {
 	strokeWidth: 4,
 	easing: 'easeInOut',
@@ -270,6 +323,9 @@ var bar = new ProgressBar.Line('#inspecciones-container', {
 	}
 });
 bar.animate(0.5);
+$( "#inspecciones-container" ).click(function() {
+	modal('modalDetalleMapa');
+});
 
 var bar = new ProgressBar.Line('#limpieza-container', {
 	strokeWidth: 4,
@@ -298,6 +354,9 @@ var bar = new ProgressBar.Line('#limpieza-container', {
 	}
 });
 bar.animate(0.4);
+$( "#limpieza-container" ).click(function() {
+	modal('modalDetalleMapa');
+});
 
 var bar = new ProgressBar.Line('#residuos-container', {
 	strokeWidth: 4,
@@ -326,6 +385,9 @@ var bar = new ProgressBar.Line('#residuos-container', {
 	}
 });
 bar.animate(0.6);
+$( "#residuos-container" ).click(function() {
+	modal('modalDetalleMapa');
+});
 
 function gotoAlertas() {
 	console.log('entra');

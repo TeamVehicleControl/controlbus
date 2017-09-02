@@ -55,7 +55,7 @@
                         <div class="btn-group">
         					<button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect login dropdown-toggle" data-toggle="dropdown" 	aria-haspopup="true" aria-expanded="false">
         						<img class="inline" src="<?php echo RUTA_IMG?>header/nouser.jpg" alt="vehikmant">
-        				    	<p class="inline">Julio Sulca</p> 
+        				    	<p class="inline"><?php echo $nombre_completo?></p> 
         				    	<i class="mdi mdi-arrow_drop_down inline"></i>
         					</button>
         					<ul class="dropdown-menu">
@@ -69,8 +69,8 @@
     		<div class="mdl-layout__drawer">
     			<span class="mdl-layout-title"><i class="mdi mdi-menu"></i></span>
     			<nav class="mdl-navigation p-t-0">
-                    <a class="mdl-navigation__link active" href=""><i class="mdi mdi-home"></i><p>Inicio</p></a>
-    				<a class="mdl-navigation__link"><div class="arrow-right"></div><i class="mdi mdi-priority_high" onclick="abirModalAlertas()"></i><p>Alertas</p></a>
+                    <a class="mdl-navigation__link" href="http://localhost:8080/controlbus/C_main"><i class="mdi mdi-home"></i><p>Inicio</p></a>
+    				<a class="mdl-navigation__link active"><div class="arrow-right"></div><i class="mdi mdi-priority_high"></i><p>Alertas</p></a>
     				<a class="mdl-navigation__link" href=""><div class="arrow-right"></div><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>
     				<a class="mdl-navigation__link" href="users.html"><i class="mdi mdi-group_add"></i><p>Proveedores</p></a>
     				<a class="mdl-navigation__link" href=""><i class="mdi mdi-person"></i><p>Clientes</p></a>
@@ -84,7 +84,7 @@
                     <div class="mdl-content-cards">
                         <div class="mdl-card">
     				        <div class="mdl-card__title">
-                                <h2 class="mdl-card__title-text" id="idCantidadEvaluar1">Ubicaci&oacute;n del veh&iacute;culo</h2>
+                                <h2 class="mdl-card__title-text" id="idCantidadEvaluar1">Ubicaci&oacute;n del veh&iacute;culo de la empresa <?php echo $empresa?></h2>
                             </div>
                             <div class="mdl-card__supporting-text br-b">
                                 <small class="m-t-100" style="font-size: 15px; display:block;" id="subtituloEvaluacion1">
@@ -104,6 +104,22 @@
     		</main>
 		</div>
 		
+		<div class="modal fade" id="modalDetalleMapa" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">                
+                    <div class="mdl-card">
+					    <div class="mdl-card__title">Detalle de fallas por zona</div>
+    					<div class="mdl-card__supporting-text">
+                            <div id="chart_divDetaMap" class="chart_new" style="display:block"></div>
+    					</div>
+    					<div class="mdl-card__actions">
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+		
         
         <script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_JS?>jquery-3.1.0.min.js?v=<?php echo time();?>"></script>
         <script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_JS?>jquery-1.12.1.js?v=<?php echo time();?>"></script>
@@ -112,7 +128,7 @@
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>alertify/js/alertify.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>progressbarjs/progressbar.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>toaster/toastr.min.js?v=<?php echo time();?>"></script>
-    	<script charset="UTF-8" type="text/javascript" async src="<?php echo RUTA_JS?>jsalertas.js?v=<?php echo time();?>"></script>
+    	<script charset="UTF-8" type="text/javascript" async src="<?php echo RUTA_JS?>jsubicacion.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_PLUGINS?>pace/pace.min.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_PLUGINS?>google_chart/loader.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>   
@@ -121,51 +137,10 @@
 
     		google.charts.load('current', {'packages':['map'],
     						   'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'});
-
-    		
-    		$(document).ready(function() {
-    			google.charts.setOnLoadCallback(drawMap);
-    			function drawMap () {
-      		      var data = new google.visualization.DataTable();
-    		      data.addColumn('string', 'Address');
-    		      data.addColumn('string', 'Location');
-    
-    		      data.addRows([
-    		        ['Plaza norte, Lima',                  'Plaza norte']
-    		      ]);
-    
-    		      var options = {
-    		        mapType: 'styledMap',
-    		        zoomLevel: 12,
-    		        showTooltip: true,
-    		        showInfoWindow: true,
-    		        useMapTypeControl: true,
-    		        maps: {
-    		          // Your custom mapTypeId holding custom map styles.
-    		          styledMap: {
-    		            name: 'Styled Map', // This name will be displayed in the map type control.
-    		            styles: [
-    		              {featureType: 'poi.attraction',
-    		               stylers: [{color: '#fce8b2'}]
-    		              },
-    		              {featureType: 'road.highway',
-    		               stylers: [{hue: '#0277bd'}, {saturation: -50}]
-    		              },
-    		              {featureType: 'road.highway',
-    		               elementType: 'labels.icon',
-    		               stylers: [{hue: '#000'}, {saturation: 100}, {lightness: 50}]
-    		              },
-    		              {featureType: 'landscape',
-    		               stylers: [{hue: '#259b24'}, {saturation: 10}, {lightness: -22}]
-    		              }
-    		        ]}}
-    		      };
-    
-    		      var map = new google.visualization.Map(document.getElementById('map_div'));
-    
-    		      map.draw(data, options);
-    		    }
-            });
+			
+    		$(window).load(function() {
+    			generarUbicaciones();
+    		});
 
         	//init();
     	</script>

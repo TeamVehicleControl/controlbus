@@ -33,7 +33,7 @@ class C_main extends CI_Controller {
 	function logout() {
 	    $data['error'] = EXIT_ERROR;
 	    try{
-	        $data['url'] = 'http://localhost:8080/controlbus';
+	        $data['url'] = RUTA_VEHIKMANT;
 	        $data['error'] = EXIT_SUCCESS;
 	    }  catch(Exception $e){
 	        $data['msj'] = $e->getMessage();
@@ -69,8 +69,49 @@ class C_main extends CI_Controller {
 	function gotoAlertas() {
 	    $data['error'] = EXIT_ERROR;
 	    try{
-	        $data['urlAlertas'] = 'http://localhost:8080/controlbus/c_alertas';
-	        _log(print_r($data['urlAlertas'], true));
+	        $data['urlAlertas'] = RUTA_VEHIKMANT.'c_alertas';
+// 	        _log(print_r($data['urlAlertas'], true));
+	        $data['error'] = EXIT_SUCCESS;
+	    }  catch(Exception $e){
+	        $data['msj'] = $e->getMessage();
+	    }
+	    echo json_encode(array_map('utf8_encode', $data));
+	}
+	
+// 	function buildTablaDocFechaLow(/*$datos*/) {
+// 	    $tmpl = array('table_open'  => '<table data-toggle="table" class="table borderless" data-toolbar="#custom-toolbar"
+// 			                                   data-pagination="true" data-page-list="[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+// 			                                   data-show-columns="false" data-search="false" id="tb_conta">',
+// 	        'table_close' => '</table>');
+// 	    $this->table->set_template($tmpl);
+// 	    $head_1 = array('data' => 'Fecha'                   , 'class' => 'text-center');
+// 	    $head_2 = array('data' => 'Docente'                 , 'class' => 'text-center');
+// 	    $head_3 = array('data' => 'Sede docente'            , 'class' => 'text-center');
+// 	    $head_4 = array('data' => 'Evaluador'               , 'class' => 'text-center');
+// 	    $head_5 = array('data' => 'Tipo visita'             , 'class' => 'text-center');
+// 	    $head_6 = array('data' => 'Horario'   , 'class' => 'text-center');
+// 	    $this->table->set_heading($head_1, $head_2, $head_3, $head_4, $head_5, $head_6);
+// 	    $val = 1;
+// // 	    foreach ($datos as $row) {
+// 	        $row_cell_1 = array('data' => /*$row['docente']*/'Motor'       , 'class' => 'text-center');
+// 	        $row_cell_2 = array('data' => $row['docente']       , 'class' => 'text-center');
+// 	        $row_cell_3 = array('data' => $row['sede']          , 'class' => 'text-center');
+// 	        $row_cell_4 = array('data' => $row['evaluador']     , 'class' => 'text-center');
+// 	        $row_cell_5 = array('data' => $row['tipo_visita']   , 'class' => 'text-center');
+// 	        $row_cell_6 = array('data' => $row['horario']       , 'class' => 'text-center');
+// 	        $val++;
+// 	        $this->table->add_row($row_cell_1, $row_cell_2, $row_cell_3, $row_cell_4, $row_cell_5, $row_cell_6);
+// // 	    }
+// 	    $tabla = $this->table->generate();
+// 	    return $tabla;
+// 	}
+
+	function verMapa() {
+	    $data['error'] = EXIT_ERROR;
+	    try{
+	        $empresa= _post('empresa');
+	        $this->session->set_userdata(array('empresa'=> $empresa));
+	        $data['ubicacion'] = RUTA_VEHIKMANT.'c_ubicacion';
 	        $data['error'] = EXIT_SUCCESS;
 	    }  catch(Exception $e){
 	        $data['msj'] = $e->getMessage();

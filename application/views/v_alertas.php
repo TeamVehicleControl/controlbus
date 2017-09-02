@@ -69,8 +69,8 @@
     		<div class="mdl-layout__drawer">
     			<span class="mdl-layout-title"><i class="mdi mdi-menu"></i></span>
     			<nav class="mdl-navigation p-t-0">
-                    <a class="mdl-navigation__link active" href=""><i class="mdi mdi-home"></i><p>Inicio</p></a>
-    				<a class="mdl-navigation__link"><div class="arrow-right"></div><i class="mdi mdi-priority_high" onclick="abirModalAlertas()"></i><p>Alertas</p></a>
+                    <a class="mdl-navigation__link" href="http://localhost:8080/controlbus/C_main"><i class="mdi mdi-home"></i><p>Inicio</p></a>
+    				<a class="mdl-navigation__link active"><div class="arrow-right"></div><i class="mdi mdi-priority_high"></i><p>Alertas</p></a>
     				<a class="mdl-navigation__link" href=""><div class="arrow-right"></div><i class="mdi mdi-grid_on"></i><p>Plan mantto</p></a>
     				<a class="mdl-navigation__link" href="users.html"><i class="mdi mdi-group_add"></i><p>Proveedores</p></a>
     				<a class="mdl-navigation__link" href=""><i class="mdi mdi-person"></i><p>Clientes</p></a>

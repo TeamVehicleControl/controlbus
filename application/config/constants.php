@@ -98,5 +98,11 @@ defined('RUTA_VEHIKMANT') OR define('RUTA_VEHIKMANT', 'http://'.(isset($_SERVER[
 //VIDEO
 defined('RUTA_VIDEO')   OR define('RUTA_VIDEO'  , 'http://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null).'/controlbus/public/video/');
 
+//EMPRESAS
+defined('EMPRESA_MERCEDES')        OR define('EMPRESA_MERCEDES', 'Mercedes Bens');
+defined('EMPRESA_KIA')        OR define('EMPRESA_KIA', 'Kia');
+defined('EMPRESA_VOLVO')        OR define('EMPRESA_VOLVO', 'Volvo');
+defined('EMPRESA_SUSUKI')        OR define('EMPRESA_SUSUKI', 'Susuki');
+
 
 
