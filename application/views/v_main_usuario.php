@@ -101,18 +101,19 @@
                             <img src="<?php echo RUTA_IMG?>profile/nouser.svg">
                         </div>
                         <div class="cont-wel-user">
-                            <H4>Hola, Jose Minaya</H4>
-                            <p>Bienvenido a 'vehikmant', aqu&iacute; podr&aacute;s administrar tus pertenencias.</p>
+                            <H4>Hola, <?php echo $nombre_completo?></H4>
+                            <p>Bienvenido al sistema de control de mantenimiento 'VehikMant'.</p>
+                            <p>Aqu&iacute; podr&aacute;s administrar el mantenimiento de tu veh&iacute;culo, planificar tu mantenimiento, consultar por los seguros y encontrar tus mejores proveedores de lubricantes y repuestos.</p>
                             <a  class="m-r-10" href="#" style="color: #fff">VER M&Aacute;S</a>
                             <a href="#" style="color: #fff">PUNTUAR</a>
                         </div>        
                         <div class="col-md-12 cont-module">
-                            <H4>Desde 'Vehikmant' puedes:</H4>                             
+                            <H4>Desde 'VehikMant' puedes:</H4>                             
                             <ul class="p-0 text-left">
-                                <li><i class="mdi mdi-done m-r-10"></i>Ver tus <a>estudiantes.</a></li>
-                                <li><i class="mdi mdi-done m-r-10"></i><a>Trasladar</a> a tus estudiantes.</li>
-                                <li><i class="mdi mdi-done m-r-10"></i>Ver tus <a>aulas.</a></li>
-                                <li><i class="mdi mdi-done m-r-10"></i>Visualizar los <a>reportes.</a></li>
+                                <li><i class="mdi mdi-done m-r-10"></i>Administrar tu <a>Mantenimiento.</a></li>
+                                <li><i class="mdi mdi-done m-r-10"></i><a>Planificar</a> el mantenimiento de tu veh&iacute;culo.</li>
+                                <li><i class="mdi mdi-done m-r-10"></i>Ver tus proveedores de <a>aceites y repuestos.</a></li>
+                                <li><i class="mdi mdi-done m-r-10"></i>Consultar por seguros.</a></li>
                             </ul>
                             <div class="cont-img-model"><img src="<?php echo RUTA_IMG?>iconsSistem/icon_matricula.png"></div>
                         </div>
@@ -166,7 +167,7 @@
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>alertify/js/alertify.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>progressbarjs/progressbar.min.js?v=<?php echo time();?>"></script>
     	<script charset="UTF-8" type="text/javascript" src="<?php echo RUTA_PLUGINS?>toaster/toastr.min.js?v=<?php echo time();?>"></script>
-    	<script charset="UTF-8" type="text/javascript" async src="<?php echo RUTA_JS?>jsmain.js?v=<?php echo time();?>"></script>
+    	<script charset="UTF-8" type="text/javascript" async src="<?php echo RUTA_JS?>jsubicacion.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_PLUGINS?>pace/pace.min.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_PLUGINS?>google_chart/loader.js?v=<?php echo time();?>"></script>
     	<script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>   

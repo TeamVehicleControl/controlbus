@@ -64,14 +64,17 @@ class C_login extends CI_Controller {
     	            $nombre     = 'Jhonatan Iberico';
     	            $rol        = 'Anexo';
     	            $nombreComp = 'Jhonatan Iberico Mesia';
+    	            $data['url'] = RUTA_VEHIKMANT.'C_main_anexo';
     	        }else if($user == 'jminaya' && $password == '123') {
     	            $nombre     = 'José Minaya';
     	            $nombreComp = 'Jose L. Minaya C.';
     	            $rol        = 'Usuario';
+    	            $data['url'] = RUTA_VEHIKMANT.'C_main_usuario';
     	        }else if($user == 'jsulca' && $password == '123') {
     	            $nombre     = 'Julio Sullca';
     	            $nombreComp = 'Julio C. Sullca';
     	            $rol        = 'Concesionaria';
+    	            $data['url'] = RUTA_VEHIKMANT.'C_main';
     	        }
     	        $this->session->set_userdata(array('usuario'           => 'jhiberico',//PARA EL MANEJO DE DATOS
     	                                           'password'          => _encodeCI('123'),
@@ -79,7 +82,6 @@ class C_login extends CI_Controller {
     	                                           'nombre_completo'   => $nombreComp,
     	                            	           'flg_clave'         => 1,
     	                                           'roles'             => $rol));
-    	        $data['url'] = RUTA_VEHIKMANT.'C_main';
     	        $data['remember'] = $check;
     	        $data['error'] = EXIT_SUCCESS;
     	    }else if($user != 'jhiberico' && $password != '123' || $user != 'jminaya' && $password != '123' || $user != 'jsulca' && $password != '123') {
