@@ -95,6 +95,48 @@
     		</div>
     		<main class="mdl-layout__content">
                 <section>
+                	<div class="mdl-content-cards ">
+                        <div class="mdl-card mdl-card-nivel-general">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Nivel de Confiabilidad</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div id="confiabilidad-container"></div>
+                            </div>
+                        </div>
+                        <div class="mdl-card mdl-card-niveles">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Plan de Mantenimiento</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div id="mantenimiento-container"></div>
+                            </div>
+                        </div>
+                        <div class="mdl-card mdl-card-niveles">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Inspecciones T&eacute;cnicas</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div id="inspecciones-container"></div>
+                            </div>
+                        </div>
+                        <div class="mdl-card mdl-card-niveles">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Limpieza Flota</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div id="limpieza-container"></div>
+                            </div>
+                        </div>
+                        <div class="mdl-card mdl-card-niveles">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Control de Residuos</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div id="residuos-container"></div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="mdl-content-cards ">
                         <div class="mdl-card mdl-card-graphics">
     				        <div class="mdl-card__title">
