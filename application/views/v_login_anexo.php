@@ -31,11 +31,9 @@
         <section>
             <div id="main" class="mdl-card">
                 <div id="opacity"></div>
-                <video autoplay loop id="video" muted>
-    				<source src="<?php echo RUTA_IMG?>video/video_car.mp4" type="video/mp4">
-    				<source src="<?php echo RUTA_IMG?>video/video_car.ogv" type="video/ogv">
-    				<source src="<?php echo RUTA_IMG?>video/video_car.webm" type="video/webm">
-    			</video>
+                <div class="login_anexo">
+                    <img alt="Logo" src="<?php echo RUTA_IMG?>header/login_anexo.jpg">
+                </div>
                 <div class="col-sm-12 text-center">
                     <h1>VehikMant</h1>
                 </div>
