@@ -38,6 +38,7 @@ body{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+	border-radius: 2px;
 }
 /*MAIN-USUARIO*/
 #main.background-white{
@@ -58,15 +59,15 @@ body{
 	background-color: #757575;
 }
 #main button{
-background-color: #003B63;
-color: #FFFFFF;
-width: 100%;
-margin: 20px 0;
+	background-color: #003B63;
+	color: #FFFFFF;
+	width: 100%;
+	margin: 20px 0;
 }
 
 #main video{
     position: absolute;
-    top: -72px;
+    top: -68px;
     right: -250px;
     height: 131%;
     z-index: -1;
